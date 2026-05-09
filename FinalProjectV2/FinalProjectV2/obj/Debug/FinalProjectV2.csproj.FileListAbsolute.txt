@@ -1,0 +1,10 @@
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.csproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.Properties.Resources.resources
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\bin\Debug\FinalProjectV2.exe.config
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\bin\Debug\FinalProjectV2.exe
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\bin\Debug\FinalProjectV2.pdb
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.exe
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.pdb
+C:\Users\Acer\source\repos\FinalProjectV2\FinalProjectV2\obj\Debug\FinalProjectV2.Login.resources
