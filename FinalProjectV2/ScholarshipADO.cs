@@ -37,13 +37,33 @@ namespace FinalProjectV2
                             RequiredCourse = reader["required_course"].ToString(),
                             MaxYearLevel = Convert.ToInt32(reader["max_year_level"]),
                             AvailableSlots = Convert.ToInt32(reader["available_slots"]),
-                            Deadline = Convert.ToDateTime(reader["deadline"]),
-                            MinimumGPA = Convert.ToDecimal(reader["minimum_gpa"])
+                            Deadline = Convert.ToDateTime(reader["deadline"])
                         });
                     }
                 }
             }
             return list;
         }
+
+
+        public bool CreateScholarship(Scholarship s)
+        {
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                string sql = @"INSERT INTO scholarship (name, provider, description, required_course, max_year_level, available_slots, deadline) 
+                       VALUES (@name, @provider, @description, @course, @year, @slots, @deadline)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@name", s.Name);
+                cmd.Parameters.AddWithValue("@provider", s.Provider);
+                cmd.Parameters.AddWithValue("@description", s.Description);
+                cmd.Parameters.AddWithValue("@course", s.RequiredCourse);
+                cmd.Parameters.AddWithValue("@year", s.MaxYearLevel);
+                cmd.Parameters.AddWithValue("@slots", s.AvailableSlots);
+                cmd.Parameters.AddWithValue("@deadline", s.Deadline);
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }
+

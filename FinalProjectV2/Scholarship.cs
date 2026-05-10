@@ -20,14 +20,9 @@ namespace FinalProjectV2
         public DateTime Deadline { get; set; }
         public int AvailableSlots { get; set; }
 
-        public decimal MinimumGPA { get; set; }
-
-        public bool CheckEligibility(decimal studentGPA, string studentCourse)
+        public bool CheckEligibility( string studentCourse)
         {
-            bool gpaPass = studentGPA >= MinimumGPA;
-            bool coursePass = (RequiredCourse == "Any" || RequiredCourse == studentCourse);
-
-            return gpaPass && coursePass;
+            return (RequiredCourse == "Any" || RequiredCourse == studentCourse);
         }
 
     }
