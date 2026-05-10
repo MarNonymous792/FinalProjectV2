@@ -188,6 +188,7 @@ namespace FinalProjectV2
             // 
             // scholarshipsPanel
             // 
+            this.scholarshipsPanel.AutoScroll = true;
             this.scholarshipsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.scholarshipsPanel.Location = new System.Drawing.Point(11, 64);
             this.scholarshipsPanel.Name = "scholarshipsPanel";

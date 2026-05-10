@@ -47,10 +47,10 @@ namespace FinalProjectV2
         {
             Panel card = new Panel
             {
-                Size = new Size(610, 95),
-                Location = new Point(15, top),
-                BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle
+                Size = new Size(490, 95),
+                Location = new Point(10, top),
+                BackColor = Color.LightYellow,
+                BorderStyle = BorderStyle.Fixed3D
             };
 
             Label lblTitle = new Label

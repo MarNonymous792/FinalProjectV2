@@ -6,19 +6,15 @@ using System.Threading.Tasks;
 
 namespace FinalProjectV2
 {
-    internal class User
+    public class User
     {
-        String UserID {  get; set; }
-        String Username { get; set; }
-        String Password { get; set; }
-        String Email {  get; set; }
-        String FirstName { get; set; }
-        String LastName { get; set; }
-        String MiddleName { get; set; }
-
-        String Course { get; set; }
-        int YearLevel { get; set; }
-        String AccountStatus { get; set; }
-
+        public string UserID { get; set; }
+        public string Username { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; } 
+        public string Email { get; set; }
+        public string Course { get; set; }
+        public int YearLevel { get; set; }
     }
 }
