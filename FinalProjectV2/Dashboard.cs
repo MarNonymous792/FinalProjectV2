@@ -12,30 +12,19 @@ namespace FinalProjectV2
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(User user)
         {
             InitializeComponent();
 
-            CreateScholarshipCard(
-                scholarshipsPanel,
-                "Scholar1",
-                "Due: Jan 15, 2025",
-                20
-            );
+            ScholarshipADO scholarshipADO = new ScholarshipADO();
 
-            CreateScholarshipCard(
-                scholarshipsPanel,
-                "Scholar2",
-                "Due: Jan 18, 2025",
-                140
-            );
+            List<Scholarship> scholarships = scholarshipADO.GetSuitableScholarships(user);
 
-            CreateScholarshipCard(
-                scholarshipsPanel,
-                "Scholar3",
-                "Due: Jan 20, 2025",
-                260
-            );
+            foreach (Scholarship scholarship in scholarships)
+            {
+                string dueDate = scholarship.Deadline.ToString("MMMM dd, yyyy");
+                CreateScholarshipCard(scholarshipsPanel, scholarship.Name, $"Due: {dueDate}", scholarshipsPanel.Controls.Count * 105);
+            }
         }
 
         private void CreateScholarshipCard(
