@@ -21,13 +21,15 @@ namespace FinalProjectV2
         {
             ScholarshipADO sado = new ScholarshipADO();
 
+           DateTime na = checkBox1.Checked ? DateTime.MaxValue : timePicker.Value;
+
             Scholarship s = new Scholarship() {
                 Name = nameTxtBox.Text,
                 Provider = providerTxtBox.Text,
                 Description = descTxtBox.Text,
                 RequiredCourse = courseTxtBox.Text,
                 MaxYearLevel = int.Parse(yearTxtBox.Text),
-                Deadline = timePicker.Value,
+                Deadline = na,
                 AvailableSlots = int.Parse(slotsTxtBox.Text)
             };
 
@@ -35,10 +37,22 @@ namespace FinalProjectV2
             if (sado.CreateScholarship(s))
             {
                 MessageBox.Show("Scholarship created successfully!");
+                //clear form
+                nameTxtBox.Text = "";
+                descTxtBox.Text = "";
+                courseTxtBox.Text = "";
+                yearTxtBox.Text = "";
+                slotsTxtBox.Text = "";
+                providerTxtBox.Text = "";
             }
             else { 
                 MessageBox.Show("Failed to create scholarship. Please check your input and try again.");
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            timePicker.Enabled = !checkBox1.Checked;
         }
     }
 }
