@@ -64,6 +64,37 @@ namespace FinalProjectV2
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
+
+        public Scholarship GetScholarshipById(int id)
+        {
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                // Query to find the specific record by its primary key
+                string sql = "SELECT * FROM scholarship WHERE scholarshipId = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                conn.Open();
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) 
+                    {
+                        return new Scholarship
+                        {
+                            ScholarshipID = Convert.ToInt32(reader["scholarshipId"]),
+                            Name = reader["name"].ToString(),
+                            Provider = reader["provider"].ToString(),
+                            Description = reader["description"].ToString(),
+                            RequiredCourse = reader["required_course"].ToString(),
+                            MaxYearLevel = Convert.ToInt32(reader["max_year_level"]),
+                            AvailableSlots = Convert.ToInt32(reader["available_slots"]),
+                            Deadline = Convert.ToDateTime(reader["deadline"])
+                        };
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
 

@@ -16,7 +16,7 @@ namespace FinalProjectV2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ScholarshipEntry());
+            Application.Run(new Login());
         }
     }
 }

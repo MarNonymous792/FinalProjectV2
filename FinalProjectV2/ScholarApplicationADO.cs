@@ -25,7 +25,7 @@ namespace FinalProjectV2
             }
         }
 
-        public List<ScholarApplication> GetUserApplications(string userId)
+        public List<ScholarApplication> GetUserApplications(User user)
         {
             List<ScholarApplication> list = new List<ScholarApplication>();
             using (MySqlConnection conn = DBConnection.GetConnection())
@@ -36,7 +36,7 @@ namespace FinalProjectV2
                        WHERE a.userid = @uid";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@uid", userId);
+                cmd.Parameters.AddWithValue("@uid", user.UserID);
 
                 conn.Open();
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -45,12 +45,11 @@ namespace FinalProjectV2
                     {
                         list.Add(new ScholarApplication
                         {
-                            ApplicationID = Convert.ToInt32(reader["applicationid"]),
+                            ApplicationId = Convert.ToInt32(reader["applicationid"]),
+                            UserId = reader["userID"].ToString(),
+                            ScholarshipId = Convert.ToInt32(reader["scholarshipId"]),
                             Status = reader["status"].ToString(),
-                            DateSubmitted = Convert.ToDateTime(reader["date_submitted"]),
-                            Remarks = reader["remarks"].ToString(),
-                            ScholarshipName = reader["name"].ToString(),
-                            Provider = reader["provider"].ToString()
+                            DateApplied = Convert.ToDateTime(reader["date_submitted"])
                         });
                     }
                 }

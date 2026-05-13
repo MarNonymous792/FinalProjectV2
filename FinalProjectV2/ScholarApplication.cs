@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace FinalProjectV2
 {
-    internal class ScholarApplication
+    public class ScholarApplication
     {
-        public int ApplicationID { get; set; }
-        public string UserID { get; set; }
-        public int ScholarshipID { get; set; }
-        public DateTime DateSubmitted { get; set; }
+        public int ApplicationId { get; set; }
+        public int ScholarshipId { get; set; }
+        public string UserId { get; set; }
         public string Status { get; set; }
-        public string Remarks { get; set; }
-
-        public string ScholarshipName { get; set; }
-        public string Provider { get; set; }
+        public string ApplicationLetterOrCvPath { get; set; }
+        public string StudyLoadPath { get; set; }
+        public string GoodMoralPath { get; set; }
+        public string PreviousGradesPath { get; set; }
+        public string ParentTaxReturnsPath { get; set; }
+        public DateTime DateApplied { get; set; }
     }
 }

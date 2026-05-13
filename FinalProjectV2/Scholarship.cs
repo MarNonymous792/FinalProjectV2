@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectV2
 {
-    internal class Scholarship
+    public class Scholarship
     {
         public int ScholarshipID { get; set; }
         public string Name { get; set; }
@@ -19,11 +19,6 @@ namespace FinalProjectV2
 
         public DateTime Deadline { get; set; }
         public int AvailableSlots { get; set; }
-
-        public bool CheckEligibility( string studentCourse)
-        {
-            return (RequiredCourse == "Any" || RequiredCourse == studentCourse);
-        }
 
     }
 }
