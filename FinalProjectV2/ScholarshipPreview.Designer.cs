@@ -27,8 +27,12 @@
         private System.Windows.Forms.Panel PanelProviderAccent;
         private System.Windows.Forms.Label LabelDescription;
         private System.Windows.Forms.Panel PanelDescription;
-        private System.Windows.Forms.TextBox TextBoxDescription;
+        private System.Windows.Forms.RichTextBox RichTextBoxDescription;
         private System.Windows.Forms.Panel PanelDescriptionAccent;
+        private System.Windows.Forms.Label LabelRequirements;
+        private System.Windows.Forms.Panel PanelRequirements;
+        private System.Windows.Forms.ListBox ListBoxRequirements;
+        private System.Windows.Forms.Panel PanelRequirementsAccent;
         private System.Windows.Forms.Label LabelAvailableSlots;
         private System.Windows.Forms.Panel PanelAvailableSlots;
         private System.Windows.Forms.Label LabelAvailableSlotsValue;
@@ -47,6 +51,8 @@
         private System.Windows.Forms.Panel PanelYearLevelAccent;
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.Button ButtonApply;
+        private System.Windows.Forms.Button ButtonAccept;
+        private System.Windows.Forms.Button ButtonCancelApplication;
 
         protected override void Dispose(bool disposing)
         {
@@ -67,6 +73,8 @@
             this.PanelRight = new System.Windows.Forms.Panel();
             this.PanelBody = new System.Windows.Forms.Panel();
             this.PanelPreviewCard = new System.Windows.Forms.Panel();
+            this.ButtonCancelApplication = new System.Windows.Forms.Button();
+            this.ButtonAccept = new System.Windows.Forms.Button();
             this.ButtonApply = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             this.PanelYearLevel = new System.Windows.Forms.Panel();
@@ -85,8 +93,12 @@
             this.LabelAvailableSlotsValue = new System.Windows.Forms.Label();
             this.PanelAvailableSlotsAccent = new System.Windows.Forms.Panel();
             this.LabelAvailableSlots = new System.Windows.Forms.Label();
+            this.PanelRequirements = new System.Windows.Forms.Panel();
+            this.ListBoxRequirements = new System.Windows.Forms.ListBox();
+            this.PanelRequirementsAccent = new System.Windows.Forms.Panel();
+            this.LabelRequirements = new System.Windows.Forms.Label();
             this.PanelDescription = new System.Windows.Forms.Panel();
-            this.TextBoxDescription = new System.Windows.Forms.TextBox();
+            this.RichTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.PanelDescriptionAccent = new System.Windows.Forms.Panel();
             this.LabelDescription = new System.Windows.Forms.Label();
             this.PanelProvider = new System.Windows.Forms.Panel();
@@ -112,6 +124,7 @@
             this.PanelRequiredCourse.SuspendLayout();
             this.PanelDeadline.SuspendLayout();
             this.PanelAvailableSlots.SuspendLayout();
+            this.PanelRequirements.SuspendLayout();
             this.PanelDescription.SuspendLayout();
             this.PanelProvider.SuspendLayout();
             this.PanelScholarshipName.SuspendLayout();
@@ -136,7 +149,7 @@
             this.LabelSidebarHint.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
             this.LabelSidebarHint.Location = new System.Drawing.Point(24, 177);
             this.LabelSidebarHint.Name = "LabelSidebarHint";
-            this.LabelSidebarHint.Size = new System.Drawing.Size(188, 96);
+            this.LabelSidebarHint.Size = new System.Drawing.Size(188, 110);
             this.LabelSidebarHint.TabIndex = 2;
             this.LabelSidebarHint.Text = "Review the scholarship details first before continuing to the requirements form.";
             // 
@@ -189,8 +202,11 @@
             // 
             // PanelPreviewCard
             // 
+            this.PanelPreviewCard.AutoScroll = false;
             this.PanelPreviewCard.BackColor = System.Drawing.Color.White;
             this.PanelPreviewCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelPreviewCard.Controls.Add(this.ButtonCancelApplication);
+            this.PanelPreviewCard.Controls.Add(this.ButtonAccept);
             this.PanelPreviewCard.Controls.Add(this.ButtonApply);
             this.PanelPreviewCard.Controls.Add(this.ButtonBack);
             this.PanelPreviewCard.Controls.Add(this.PanelYearLevel);
@@ -201,6 +217,8 @@
             this.PanelPreviewCard.Controls.Add(this.LabelDeadline);
             this.PanelPreviewCard.Controls.Add(this.PanelAvailableSlots);
             this.PanelPreviewCard.Controls.Add(this.LabelAvailableSlots);
+            this.PanelPreviewCard.Controls.Add(this.PanelRequirements);
+            this.PanelPreviewCard.Controls.Add(this.LabelRequirements);
             this.PanelPreviewCard.Controls.Add(this.PanelDescription);
             this.PanelPreviewCard.Controls.Add(this.LabelDescription);
             this.PanelPreviewCard.Controls.Add(this.PanelProvider);
@@ -210,10 +228,42 @@
             this.PanelPreviewCard.Controls.Add(this.LabelSubtitle);
             this.PanelPreviewCard.Controls.Add(this.LabelTitle);
             this.PanelPreviewCard.Controls.Add(this.LabelPortal);
-            this.PanelPreviewCard.Location = new System.Drawing.Point(28, 26);
+            this.PanelPreviewCard.Location = new System.Drawing.Point(28, 12);
             this.PanelPreviewCard.Name = "PanelPreviewCard";
-            this.PanelPreviewCard.Size = new System.Drawing.Size(654, 520);
+            this.PanelPreviewCard.Size = new System.Drawing.Size(654, 554);
             this.PanelPreviewCard.TabIndex = 0;
+            // 
+            // ButtonCancelApplication
+            // 
+            this.ButtonCancelApplication.BackColor = System.Drawing.Color.White;
+            this.ButtonCancelApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(184, 51, 51);
+            this.ButtonCancelApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCancelApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
+            this.ButtonCancelApplication.ForeColor = System.Drawing.Color.FromArgb(184, 51, 51);
+            this.ButtonCancelApplication.Location = new System.Drawing.Point(308, 514);
+            this.ButtonCancelApplication.Name = "ButtonCancelApplication";
+            this.ButtonCancelApplication.Size = new System.Drawing.Size(136, 34);
+            this.ButtonCancelApplication.TabIndex = 22;
+            this.ButtonCancelApplication.Text = "Cancel";
+            this.ButtonCancelApplication.UseVisualStyleBackColor = false;
+            this.ButtonCancelApplication.Visible = false;
+            this.ButtonCancelApplication.Click += new System.EventHandler(this.ButtonCancelApplication_Click);
+            // 
+            // ButtonAccept
+            // 
+            this.ButtonAccept.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            this.ButtonAccept.FlatAppearance.BorderSize = 0;
+            this.ButtonAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAccept.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
+            this.ButtonAccept.ForeColor = System.Drawing.Color.White;
+            this.ButtonAccept.Location = new System.Drawing.Point(456, 514);
+            this.ButtonAccept.Name = "ButtonAccept";
+            this.ButtonAccept.Size = new System.Drawing.Size(136, 34);
+            this.ButtonAccept.TabIndex = 21;
+            this.ButtonAccept.Text = "Accept";
+            this.ButtonAccept.UseVisualStyleBackColor = false;
+            this.ButtonAccept.Visible = false;
+            this.ButtonAccept.Click += new System.EventHandler(this.ButtonAccept_Click);
             // 
             // ButtonApply
             // 
@@ -222,10 +272,10 @@
             this.ButtonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonApply.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
             this.ButtonApply.ForeColor = System.Drawing.Color.White;
-            this.ButtonApply.Location = new System.Drawing.Point(454, 450);
+            this.ButtonApply.Location = new System.Drawing.Point(456, 510);
             this.ButtonApply.Name = "ButtonApply";
-            this.ButtonApply.Size = new System.Drawing.Size(136, 40);
-            this.ButtonApply.TabIndex = 18;
+            this.ButtonApply.Size = new System.Drawing.Size(136, 34);
+            this.ButtonApply.TabIndex = 20;
             this.ButtonApply.Text = "Apply";
             this.ButtonApply.UseVisualStyleBackColor = false;
             this.ButtonApply.Click += new System.EventHandler(this.ButtonApply_Click);
@@ -237,10 +287,10 @@
             this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonBack.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
             this.ButtonBack.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.ButtonBack.Location = new System.Drawing.Point(43, 450);
+            this.ButtonBack.Location = new System.Drawing.Point(43, 510);
             this.ButtonBack.Name = "ButtonBack";
-            this.ButtonBack.Size = new System.Drawing.Size(110, 40);
-            this.ButtonBack.TabIndex = 17;
+            this.ButtonBack.Size = new System.Drawing.Size(110, 34);
+            this.ButtonBack.TabIndex = 19;
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = false;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
@@ -250,17 +300,17 @@
             this.PanelYearLevel.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelYearLevel.Controls.Add(this.LabelYearLevelValue);
             this.PanelYearLevel.Controls.Add(this.PanelYearLevelAccent);
-            this.PanelYearLevel.Location = new System.Drawing.Point(318, 374);
+            this.PanelYearLevel.Location = new System.Drawing.Point(320, 468);
             this.PanelYearLevel.Name = "PanelYearLevel";
-            this.PanelYearLevel.Size = new System.Drawing.Size(272, 36);
-            this.PanelYearLevel.TabIndex = 16;
+            this.PanelYearLevel.Size = new System.Drawing.Size(272, 34);
+            this.PanelYearLevel.TabIndex = 18;
             // 
             // LabelYearLevelValue
             // 
             this.LabelYearLevelValue.AutoEllipsis = true;
             this.LabelYearLevelValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelYearLevelValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelYearLevelValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelYearLevelValue.Location = new System.Drawing.Point(14, 8);
             this.LabelYearLevelValue.Name = "LabelYearLevelValue";
             this.LabelYearLevelValue.Size = new System.Drawing.Size(244, 18);
             this.LabelYearLevelValue.TabIndex = 1;
@@ -272,7 +322,7 @@
             this.PanelYearLevelAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelYearLevelAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelYearLevelAccent.Name = "PanelYearLevelAccent";
-            this.PanelYearLevelAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelYearLevelAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelYearLevelAccent.TabIndex = 0;
             // 
             // LabelYearLevel
@@ -280,10 +330,10 @@
             this.LabelYearLevel.AutoSize = true;
             this.LabelYearLevel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelYearLevel.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelYearLevel.Location = new System.Drawing.Point(318, 352);
+            this.LabelYearLevel.Location = new System.Drawing.Point(320, 448);
             this.LabelYearLevel.Name = "LabelYearLevel";
             this.LabelYearLevel.Size = new System.Drawing.Size(72, 19);
-            this.LabelYearLevel.TabIndex = 15;
+            this.LabelYearLevel.TabIndex = 17;
             this.LabelYearLevel.Text = "Year level";
             // 
             // PanelRequiredCourse
@@ -291,17 +341,17 @@
             this.PanelRequiredCourse.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelRequiredCourse.Controls.Add(this.LabelRequiredCourseValue);
             this.PanelRequiredCourse.Controls.Add(this.PanelRequiredCourseAccent);
-            this.PanelRequiredCourse.Location = new System.Drawing.Point(43, 374);
+            this.PanelRequiredCourse.Location = new System.Drawing.Point(43, 468);
             this.PanelRequiredCourse.Name = "PanelRequiredCourse";
-            this.PanelRequiredCourse.Size = new System.Drawing.Size(272, 36);
-            this.PanelRequiredCourse.TabIndex = 14;
+            this.PanelRequiredCourse.Size = new System.Drawing.Size(272, 34);
+            this.PanelRequiredCourse.TabIndex = 16;
             // 
             // LabelRequiredCourseValue
             // 
             this.LabelRequiredCourseValue.AutoEllipsis = true;
             this.LabelRequiredCourseValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelRequiredCourseValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelRequiredCourseValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelRequiredCourseValue.Location = new System.Drawing.Point(14, 8);
             this.LabelRequiredCourseValue.Name = "LabelRequiredCourseValue";
             this.LabelRequiredCourseValue.Size = new System.Drawing.Size(244, 18);
             this.LabelRequiredCourseValue.TabIndex = 1;
@@ -313,7 +363,7 @@
             this.PanelRequiredCourseAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelRequiredCourseAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelRequiredCourseAccent.Name = "PanelRequiredCourseAccent";
-            this.PanelRequiredCourseAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelRequiredCourseAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelRequiredCourseAccent.TabIndex = 0;
             // 
             // LabelRequiredCourse
@@ -321,10 +371,10 @@
             this.LabelRequiredCourse.AutoSize = true;
             this.LabelRequiredCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelRequiredCourse.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelRequiredCourse.Location = new System.Drawing.Point(43, 352);
+            this.LabelRequiredCourse.Location = new System.Drawing.Point(43, 448);
             this.LabelRequiredCourse.Name = "LabelRequiredCourse";
             this.LabelRequiredCourse.Size = new System.Drawing.Size(112, 19);
-            this.LabelRequiredCourse.TabIndex = 13;
+            this.LabelRequiredCourse.TabIndex = 15;
             this.LabelRequiredCourse.Text = "Required course";
             // 
             // PanelDeadline
@@ -332,17 +382,17 @@
             this.PanelDeadline.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelDeadline.Controls.Add(this.LabelDeadlineValue);
             this.PanelDeadline.Controls.Add(this.PanelDeadlineAccent);
-            this.PanelDeadline.Location = new System.Drawing.Point(318, 302);
+            this.PanelDeadline.Location = new System.Drawing.Point(320, 408);
             this.PanelDeadline.Name = "PanelDeadline";
-            this.PanelDeadline.Size = new System.Drawing.Size(272, 36);
-            this.PanelDeadline.TabIndex = 12;
+            this.PanelDeadline.Size = new System.Drawing.Size(272, 34);
+            this.PanelDeadline.TabIndex = 14;
             // 
             // LabelDeadlineValue
             // 
             this.LabelDeadlineValue.AutoEllipsis = true;
             this.LabelDeadlineValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelDeadlineValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelDeadlineValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelDeadlineValue.Location = new System.Drawing.Point(14, 8);
             this.LabelDeadlineValue.Name = "LabelDeadlineValue";
             this.LabelDeadlineValue.Size = new System.Drawing.Size(244, 18);
             this.LabelDeadlineValue.TabIndex = 1;
@@ -354,7 +404,7 @@
             this.PanelDeadlineAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelDeadlineAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelDeadlineAccent.Name = "PanelDeadlineAccent";
-            this.PanelDeadlineAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelDeadlineAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelDeadlineAccent.TabIndex = 0;
             // 
             // LabelDeadline
@@ -362,10 +412,10 @@
             this.LabelDeadline.AutoSize = true;
             this.LabelDeadline.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelDeadline.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelDeadline.Location = new System.Drawing.Point(318, 280);
+            this.LabelDeadline.Location = new System.Drawing.Point(320, 388);
             this.LabelDeadline.Name = "LabelDeadline";
             this.LabelDeadline.Size = new System.Drawing.Size(62, 19);
-            this.LabelDeadline.TabIndex = 11;
+            this.LabelDeadline.TabIndex = 13;
             this.LabelDeadline.Text = "Deadline";
             // 
             // PanelAvailableSlots
@@ -373,17 +423,17 @@
             this.PanelAvailableSlots.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelAvailableSlots.Controls.Add(this.LabelAvailableSlotsValue);
             this.PanelAvailableSlots.Controls.Add(this.PanelAvailableSlotsAccent);
-            this.PanelAvailableSlots.Location = new System.Drawing.Point(43, 302);
+            this.PanelAvailableSlots.Location = new System.Drawing.Point(43, 408);
             this.PanelAvailableSlots.Name = "PanelAvailableSlots";
-            this.PanelAvailableSlots.Size = new System.Drawing.Size(272, 36);
-            this.PanelAvailableSlots.TabIndex = 10;
+            this.PanelAvailableSlots.Size = new System.Drawing.Size(272, 34);
+            this.PanelAvailableSlots.TabIndex = 12;
             // 
             // LabelAvailableSlotsValue
             // 
             this.LabelAvailableSlotsValue.AutoEllipsis = true;
             this.LabelAvailableSlotsValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelAvailableSlotsValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelAvailableSlotsValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelAvailableSlotsValue.Location = new System.Drawing.Point(14, 8);
             this.LabelAvailableSlotsValue.Name = "LabelAvailableSlotsValue";
             this.LabelAvailableSlotsValue.Size = new System.Drawing.Size(244, 18);
             this.LabelAvailableSlotsValue.TabIndex = 1;
@@ -395,7 +445,7 @@
             this.PanelAvailableSlotsAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelAvailableSlotsAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelAvailableSlotsAccent.Name = "PanelAvailableSlotsAccent";
-            this.PanelAvailableSlotsAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelAvailableSlotsAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelAvailableSlotsAccent.TabIndex = 0;
             // 
             // LabelAvailableSlots
@@ -403,35 +453,83 @@
             this.LabelAvailableSlots.AutoSize = true;
             this.LabelAvailableSlots.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelAvailableSlots.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelAvailableSlots.Location = new System.Drawing.Point(43, 280);
+            this.LabelAvailableSlots.Location = new System.Drawing.Point(43, 388);
             this.LabelAvailableSlots.Name = "LabelAvailableSlots";
             this.LabelAvailableSlots.Size = new System.Drawing.Size(93, 19);
-            this.LabelAvailableSlots.TabIndex = 9;
+            this.LabelAvailableSlots.TabIndex = 11;
             this.LabelAvailableSlots.Text = "Available slots";
+            // 
+            // PanelRequirements
+            // 
+            this.PanelRequirements.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.PanelRequirements.Controls.Add(this.ListBoxRequirements);
+            this.PanelRequirements.Controls.Add(this.PanelRequirementsAccent);
+            this.PanelRequirements.Location = new System.Drawing.Point(43, 330);
+            this.PanelRequirements.Name = "PanelRequirements";
+            this.PanelRequirements.Size = new System.Drawing.Size(549, 52);
+            this.PanelRequirements.TabIndex = 10;
+            this.PanelRequirements.Visible = false;
+            // 
+            // ListBoxRequirements
+            // 
+            this.ListBoxRequirements.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.ListBoxRequirements.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListBoxRequirements.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.ListBoxRequirements.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ListBoxRequirements.FormattingEnabled = true;
+            this.ListBoxRequirements.HorizontalScrollbar = true;
+            this.ListBoxRequirements.IntegralHeight = false;
+            this.ListBoxRequirements.ItemHeight = 17;
+            this.ListBoxRequirements.Location = new System.Drawing.Point(14, 8);
+            this.ListBoxRequirements.Name = "ListBoxRequirements";
+            this.ListBoxRequirements.Size = new System.Drawing.Size(521, 36);
+            this.ListBoxRequirements.TabIndex = 1;
+            this.ListBoxRequirements.DoubleClick += new System.EventHandler(this.ListBoxRequirements_DoubleClick);
+            // 
+            // PanelRequirementsAccent
+            // 
+            this.PanelRequirementsAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.PanelRequirementsAccent.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelRequirementsAccent.Location = new System.Drawing.Point(0, 0);
+            this.PanelRequirementsAccent.Name = "PanelRequirementsAccent";
+            this.PanelRequirementsAccent.Size = new System.Drawing.Size(5, 52);
+            this.PanelRequirementsAccent.TabIndex = 0;
+            // 
+            // LabelRequirements
+            // 
+            this.LabelRequirements.AutoSize = true;
+            this.LabelRequirements.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LabelRequirements.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelRequirements.Location = new System.Drawing.Point(43, 310);
+            this.LabelRequirements.Name = "LabelRequirements";
+            this.LabelRequirements.Size = new System.Drawing.Size(149, 19);
+            this.LabelRequirements.TabIndex = 9;
+            this.LabelRequirements.Text = "Attached requirements";
+            this.LabelRequirements.Visible = false;
             // 
             // PanelDescription
             // 
             this.PanelDescription.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
-            this.PanelDescription.Controls.Add(this.TextBoxDescription);
+            this.PanelDescription.Controls.Add(this.RichTextBoxDescription);
             this.PanelDescription.Controls.Add(this.PanelDescriptionAccent);
-            this.PanelDescription.Location = new System.Drawing.Point(43, 208);
+            this.PanelDescription.Location = new System.Drawing.Point(43, 190);
             this.PanelDescription.Name = "PanelDescription";
-            this.PanelDescription.Size = new System.Drawing.Size(547, 58);
+            this.PanelDescription.Size = new System.Drawing.Size(549, 114);
             this.PanelDescription.TabIndex = 8;
             // 
-            // TextBoxDescription
+            // RichTextBoxDescription
             // 
-            this.TextBoxDescription.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
-            this.TextBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.TextBoxDescription.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.TextBoxDescription.Location = new System.Drawing.Point(14, 8);
-            this.TextBoxDescription.Multiline = true;
-            this.TextBoxDescription.Name = "TextBoxDescription";
-            this.TextBoxDescription.ReadOnly = true;
-            this.TextBoxDescription.Size = new System.Drawing.Size(519, 42);
-            this.TextBoxDescription.TabIndex = 1;
-            this.TextBoxDescription.TabStop = false;
+            this.RichTextBoxDescription.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.RichTextBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RichTextBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.RichTextBoxDescription.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.RichTextBoxDescription.Location = new System.Drawing.Point(14, 8);
+            this.RichTextBoxDescription.Name = "RichTextBoxDescription";
+            this.RichTextBoxDescription.ReadOnly = true;
+            this.RichTextBoxDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.RichTextBoxDescription.Size = new System.Drawing.Size(521, 98);
+            this.RichTextBoxDescription.TabIndex = 1;
+            this.RichTextBoxDescription.Text = "";
             // 
             // PanelDescriptionAccent
             // 
@@ -439,7 +537,7 @@
             this.PanelDescriptionAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelDescriptionAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelDescriptionAccent.Name = "PanelDescriptionAccent";
-            this.PanelDescriptionAccent.Size = new System.Drawing.Size(5, 58);
+            this.PanelDescriptionAccent.Size = new System.Drawing.Size(5, 114);
             this.PanelDescriptionAccent.TabIndex = 0;
             // 
             // LabelDescription
@@ -447,7 +545,7 @@
             this.LabelDescription.AutoSize = true;
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelDescription.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelDescription.Location = new System.Drawing.Point(43, 186);
+            this.LabelDescription.Location = new System.Drawing.Point(43, 170);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Size = new System.Drawing.Size(116, 19);
             this.LabelDescription.TabIndex = 7;
@@ -458,9 +556,9 @@
             this.PanelProvider.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelProvider.Controls.Add(this.LabelProviderValue);
             this.PanelProvider.Controls.Add(this.PanelProviderAccent);
-            this.PanelProvider.Location = new System.Drawing.Point(318, 136);
+            this.PanelProvider.Location = new System.Drawing.Point(320, 128);
             this.PanelProvider.Name = "PanelProvider";
-            this.PanelProvider.Size = new System.Drawing.Size(272, 36);
+            this.PanelProvider.Size = new System.Drawing.Size(272, 34);
             this.PanelProvider.TabIndex = 6;
             // 
             // LabelProviderValue
@@ -468,7 +566,7 @@
             this.LabelProviderValue.AutoEllipsis = true;
             this.LabelProviderValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelProviderValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelProviderValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelProviderValue.Location = new System.Drawing.Point(14, 8);
             this.LabelProviderValue.Name = "LabelProviderValue";
             this.LabelProviderValue.Size = new System.Drawing.Size(244, 18);
             this.LabelProviderValue.TabIndex = 1;
@@ -480,7 +578,7 @@
             this.PanelProviderAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelProviderAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelProviderAccent.Name = "PanelProviderAccent";
-            this.PanelProviderAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelProviderAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelProviderAccent.TabIndex = 0;
             // 
             // LabelProvider
@@ -488,7 +586,7 @@
             this.LabelProvider.AutoSize = true;
             this.LabelProvider.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelProvider.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelProvider.Location = new System.Drawing.Point(318, 114);
+            this.LabelProvider.Location = new System.Drawing.Point(320, 108);
             this.LabelProvider.Name = "LabelProvider";
             this.LabelProvider.Size = new System.Drawing.Size(59, 19);
             this.LabelProvider.TabIndex = 5;
@@ -499,9 +597,9 @@
             this.PanelScholarshipName.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
             this.PanelScholarshipName.Controls.Add(this.LabelScholarshipNameValue);
             this.PanelScholarshipName.Controls.Add(this.PanelScholarshipNameAccent);
-            this.PanelScholarshipName.Location = new System.Drawing.Point(43, 136);
+            this.PanelScholarshipName.Location = new System.Drawing.Point(43, 128);
             this.PanelScholarshipName.Name = "PanelScholarshipName";
-            this.PanelScholarshipName.Size = new System.Drawing.Size(272, 36);
+            this.PanelScholarshipName.Size = new System.Drawing.Size(272, 34);
             this.PanelScholarshipName.TabIndex = 4;
             // 
             // LabelScholarshipNameValue
@@ -509,7 +607,7 @@
             this.LabelScholarshipNameValue.AutoEllipsis = true;
             this.LabelScholarshipNameValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelScholarshipNameValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelScholarshipNameValue.Location = new System.Drawing.Point(14, 9);
+            this.LabelScholarshipNameValue.Location = new System.Drawing.Point(14, 8);
             this.LabelScholarshipNameValue.Name = "LabelScholarshipNameValue";
             this.LabelScholarshipNameValue.Size = new System.Drawing.Size(244, 18);
             this.LabelScholarshipNameValue.TabIndex = 1;
@@ -521,7 +619,7 @@
             this.PanelScholarshipNameAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelScholarshipNameAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelScholarshipNameAccent.Name = "PanelScholarshipNameAccent";
-            this.PanelScholarshipNameAccent.Size = new System.Drawing.Size(5, 36);
+            this.PanelScholarshipNameAccent.Size = new System.Drawing.Size(5, 34);
             this.PanelScholarshipNameAccent.TabIndex = 0;
             // 
             // LabelScholarshipName
@@ -529,7 +627,7 @@
             this.LabelScholarshipName.AutoSize = true;
             this.LabelScholarshipName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LabelScholarshipName.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelScholarshipName.Location = new System.Drawing.Point(43, 114);
+            this.LabelScholarshipName.Location = new System.Drawing.Point(43, 108);
             this.LabelScholarshipName.Name = "LabelScholarshipName";
             this.LabelScholarshipName.Size = new System.Drawing.Size(113, 19);
             this.LabelScholarshipName.TabIndex = 3;
@@ -539,9 +637,9 @@
             // 
             this.LabelSubtitle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.LabelSubtitle.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
-            this.LabelSubtitle.Location = new System.Drawing.Point(42, 58);
+            this.LabelSubtitle.Location = new System.Drawing.Point(42, 78);
             this.LabelSubtitle.Name = "LabelSubtitle";
-            this.LabelSubtitle.Size = new System.Drawing.Size(548, 42);
+            this.LabelSubtitle.Size = new System.Drawing.Size(548, 24);
             this.LabelSubtitle.TabIndex = 2;
             this.LabelSubtitle.Text = "Review the scholarship details before continuing to the application requirements form.";
             // 
@@ -550,7 +648,7 @@
             this.LabelTitle.AutoSize = true;
             this.LabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
             this.LabelTitle.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
-            this.LabelTitle.Location = new System.Drawing.Point(38, 20);
+            this.LabelTitle.Location = new System.Drawing.Point(42, 30);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(286, 45);
             this.LabelTitle.TabIndex = 1;
@@ -561,7 +659,7 @@
             this.LabelPortal.AutoSize = true;
             this.LabelPortal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelPortal.ForeColor = System.Drawing.Color.FromArgb(201, 158, 42);
-            this.LabelPortal.Location = new System.Drawing.Point(42, 10);
+            this.LabelPortal.Location = new System.Drawing.Point(42, 12);
             this.LabelPortal.Name = "LabelPortal";
             this.LabelPortal.Size = new System.Drawing.Size(145, 17);
             this.LabelPortal.TabIndex = 0;
@@ -638,8 +736,8 @@
             this.PanelRequiredCourse.ResumeLayout(false);
             this.PanelDeadline.ResumeLayout(false);
             this.PanelAvailableSlots.ResumeLayout(false);
+            this.PanelRequirements.ResumeLayout(false);
             this.PanelDescription.ResumeLayout(false);
-            this.PanelDescription.PerformLayout();
             this.PanelProvider.ResumeLayout(false);
             this.PanelScholarshipName.ResumeLayout(false);
             this.PanelHeader.ResumeLayout(false);

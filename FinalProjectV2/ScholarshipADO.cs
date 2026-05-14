@@ -1,100 +1,180 @@
-﻿using MySql.Data.MySqlClient;
+﻿// File: ScholarshipADO.cs
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProjectV2
 {
     internal class ScholarshipADO
     {
-        public List<Scholarship> GetSuitableScholarships(User currentUser)
+        public bool CreateScholarship(Scholarship scholarship)
         {
-            List<Scholarship> list = new List<Scholarship>();
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                string sql = @"
+                    INSERT INTO scholarship
+                    (
+                        name,
+                        provider,
+                        description,
+                        required_course,
+                        max_year_level,
+                        deadline,
+                        available_slots
+                    )
+                    VALUES
+                    (
+                        @name,
+                        @provider,
+                        @description,
+                        @requiredCourse,
+                        @maxYearLevel,
+                        @deadline,
+                        @availableSlots
+                    )";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", scholarship.Name);
+                    cmd.Parameters.AddWithValue("@provider", scholarship.Provider);
+                    cmd.Parameters.AddWithValue("@description", scholarship.Description);
+                    cmd.Parameters.AddWithValue("@requiredCourse", scholarship.RequiredCourse);
+                    cmd.Parameters.AddWithValue("@maxYearLevel", scholarship.MaxYearLevel);
+                    cmd.Parameters.AddWithValue("@deadline", scholarship.Deadline);
+                    cmd.Parameters.AddWithValue("@availableSlots", scholarship.AvailableSlots);
+
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public List<Scholarship> GetSuitableScholarships(User user)
+        {
+            List<Scholarship> scholarships = new List<Scholarship>();
 
             using (MySqlConnection conn = DBConnection.GetConnection())
             {
-                string sql = @"SELECT * FROM scholarship 
-                       WHERE required_course = @userCourse OR required_course = 'Any'
-                       AND max_year_level >= @userYear";
+                string sql = @"
+                    SELECT
+                        scholarshipId,
+                        name,
+                        provider,
+                        description,
+                        required_course,
+                        max_year_level,
+                        deadline,
+                        available_slots
+                    FROM scholarship
+                    ORDER BY deadline ASC, name ASC";
 
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@userCourse", currentUser.Course);
-                cmd.Parameters.AddWithValue("@userYear", currentUser.YearLevel);
-
-                conn.Open();
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    while (reader.Read())
+                    conn.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        list.Add(new Scholarship
+                        while (reader.Read())
                         {
-                            ScholarshipID = Convert.ToInt32(reader["scholarshipId"]),
-                            Name = reader["name"].ToString(),
-                            Provider = reader["provider"].ToString(),
-                            Description = reader["description"].ToString(),
-                            RequiredCourse = reader["required_course"].ToString(),
-                            MaxYearLevel = Convert.ToInt32(reader["max_year_level"]),
-                            AvailableSlots = Convert.ToInt32(reader["available_slots"]),
-                            Deadline = Convert.ToDateTime(reader["deadline"])
-                        });
+                            scholarships.Add(new Scholarship
+                            {
+                                ScholarshipId = GetInt32(reader, "scholarshipId"),
+                                Name = GetString(reader, "name"),
+                                Provider = GetString(reader, "provider"),
+                                Description = GetString(reader, "description"),
+                                RequiredCourse = GetString(reader, "required_course"),
+                                MaxYearLevel = GetInt32(reader, "max_year_level"),
+                                Deadline = GetDateTime(reader, "deadline"),
+                                AvailableSlots = GetInt32(reader, "available_slots")
+                            });
+                        }
                     }
                 }
             }
-            return list;
+
+            return scholarships;
         }
 
-
-        public bool CreateScholarship(Scholarship s)
+        public Scholarship GetScholarshipById(int scholarshipId)
         {
             using (MySqlConnection conn = DBConnection.GetConnection())
             {
-                string sql = @"INSERT INTO scholarship (name, provider, description, required_course, max_year_level, available_slots, deadline) 
-                       VALUES (@name, @provider, @description, @course, @year, @slots, @deadline)";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@name", s.Name);
-                cmd.Parameters.AddWithValue("@provider", s.Provider);
-                cmd.Parameters.AddWithValue("@description", s.Description);
-                cmd.Parameters.AddWithValue("@course", s.RequiredCourse);
-                cmd.Parameters.AddWithValue("@year", s.MaxYearLevel);
-                cmd.Parameters.AddWithValue("@slots", s.AvailableSlots);
-                cmd.Parameters.AddWithValue("@deadline", s.Deadline);
-                conn.Open();
-                return cmd.ExecuteNonQuery() > 0;
-            }
-        }
+                string sql = @"
+                    SELECT
+                        scholarshipId,
+                        name,
+                        provider,
+                        description,
+                        required_course,
+                        max_year_level,
+                        deadline,
+                        available_slots
+                    FROM scholarship
+                    WHERE scholarshipId = @scholarshipId
+                    LIMIT 1";
 
-        public Scholarship GetScholarshipById(int id)
-        {
-            using (MySqlConnection conn = DBConnection.GetConnection())
-            {
-                // Query to find the specific record by its primary key
-                string sql = "SELECT * FROM scholarship WHERE scholarshipId = @id";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-
-                conn.Open();
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    if (reader.Read()) 
+                    cmd.Parameters.AddWithValue("@scholarshipId", scholarshipId);
+                    conn.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
+                        if (!reader.Read())
+                        {
+                            return null;
+                        }
+
                         return new Scholarship
                         {
-                            ScholarshipID = Convert.ToInt32(reader["scholarshipId"]),
-                            Name = reader["name"].ToString(),
-                            Provider = reader["provider"].ToString(),
-                            Description = reader["description"].ToString(),
-                            RequiredCourse = reader["required_course"].ToString(),
-                            MaxYearLevel = Convert.ToInt32(reader["max_year_level"]),
-                            AvailableSlots = Convert.ToInt32(reader["available_slots"]),
-                            Deadline = Convert.ToDateTime(reader["deadline"])
+                            ScholarshipId = GetInt32(reader, "scholarshipId"),
+                            Name = GetString(reader, "name"),
+                            Provider = GetString(reader, "provider"),
+                            Description = GetString(reader, "description"),
+                            RequiredCourse = GetString(reader, "required_course"),
+                            MaxYearLevel = GetInt32(reader, "max_year_level"),
+                            Deadline = GetDateTime(reader, "deadline"),
+                            AvailableSlots = GetInt32(reader, "available_slots")
                         };
                     }
                 }
             }
-            return null;
+        }
+
+        private int GetInt32(MySqlDataReader reader, string columnName)
+        {
+            int ordinal = reader.GetOrdinal(columnName);
+
+            if (reader.IsDBNull(ordinal))
+            {
+                return 0;
+            }
+
+            return Convert.ToInt32(reader.GetValue(ordinal));
+        }
+
+        private DateTime GetDateTime(MySqlDataReader reader, string columnName)
+        {
+            int ordinal = reader.GetOrdinal(columnName);
+
+            if (reader.IsDBNull(ordinal))
+            {
+                return DateTime.MinValue;
+            }
+
+            return Convert.ToDateTime(reader.GetValue(ordinal));
+        }
+
+        private string GetString(MySqlDataReader reader, string columnName)
+        {
+            int ordinal = reader.GetOrdinal(columnName);
+
+            if (reader.IsDBNull(ordinal))
+            {
+                return string.Empty;
+            }
+
+            return reader.GetValue(ordinal).ToString();
         }
     }
 }
-

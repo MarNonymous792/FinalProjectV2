@@ -1,6 +1,4 @@
-﻿// File: Dashboard.cs
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,11 +7,13 @@ namespace FinalProjectV2
 {
     public partial class Dashboard : Form
     {
-        ScholarshipADO sado = new ScholarshipADO();
-        ScholarApplicationADO saado = new ScholarApplicationADO();
-        Session sesh = new Session();
-        private  List<ScholarApplication> applications;
+        private readonly ScholarshipADO sado = new ScholarshipADO();
+        private readonly ScholarApplicationADO saado = new ScholarApplicationADO();
+        private readonly Session sesh = new Session();
+
+        private List<ScholarApplication> applications;
         private List<Scholarship> scholarships;
+
         private readonly Color activeBlue = Color.FromArgb(10, 54, 130);
         private readonly Color accentGold = Color.FromArgb(201, 158, 42);
         private readonly Color darkText = Color.FromArgb(26, 36, 56);
@@ -24,6 +24,7 @@ namespace FinalProjectV2
             sesh.CurrentUser = user;
             scholarships = sado.GetSuitableScholarships(sesh.CurrentUser);
             applications = saado.GetUserApplications(user);
+
             InitializeComponent();
             LoadScholarshipCards();
             LoadApplicationCards();
@@ -45,6 +46,7 @@ namespace FinalProjectV2
                 ? "09123456789"
                 : sesh.CurrentUser.ContactNo;
         }
+
         private void LoadScholarshipCards()
         {
             FlowScholarships.SuspendLayout();
@@ -167,22 +169,24 @@ namespace FinalProjectV2
 
         private Control CreateApplicationCard(ScholarApplication application)
         {
-            ScholarshipADO sado = new ScholarshipADO();
             Scholarship scholarship = sado.GetScholarshipById(application.ScholarshipId);
-           
+
             Panel card = new Panel
             {
                 BackColor = Color.White,
                 BorderStyle = BorderStyle.FixedSingle,
                 Margin = new Padding(0, 0, 0, 14),
-                Size = new Size(540, 96)
+                Size = new Size(540, 110),
+                Cursor = Cursors.Hand,
+                Tag = application
             };
 
             Panel accent = new Panel
             {
                 BackColor = activeBlue,
                 Dock = DockStyle.Left,
-                Width = 5
+                Width = 5,
+                Tag = application
             };
 
             Label labelName = new Label
@@ -192,7 +196,9 @@ namespace FinalProjectV2
                 ForeColor = darkText,
                 Location = new Point(18, 14),
                 Size = new Size(310, 24),
-                Text = scholarship.Name
+                Text = scholarship != null ? scholarship.Name : "Scholarship",
+                Cursor = Cursors.Hand,
+                Tag = application
             };
 
             Label labelProvider = new Label
@@ -202,14 +208,30 @@ namespace FinalProjectV2
                 ForeColor = lightText,
                 Location = new Point(18, 39),
                 Size = new Size(310, 18),
-                Text = "Provider: " + scholarship.Provider
+                Text = scholarship != null ? "Provider: " + scholarship.Provider : "Provider: N/A",
+                Cursor = Cursors.Hand,
+                Tag = application
+            };
+
+            Label labelHint = new Label
+            {
+                AutoSize = false,
+                Font = new Font("Segoe UI", 9F, FontStyle.Italic),
+                ForeColor = lightText,
+                Location = new Point(18, 65),
+                Size = new Size(280, 18),
+                Text = "Click card to preview application",
+                Cursor = Cursors.Hand,
+                Tag = application
             };
 
             Panel statusPill = new Panel
             {
                 BackColor = GetStatusBackColor(application.Status),
-                Location = new Point(390, 30),
-                Size = new Size(120, 34)
+                Location = new Point(390, 22),
+                Size = new Size(120, 34),
+                Cursor = Cursors.Hand,
+                Tag = application
             };
 
             Label labelStatus = new Label
@@ -218,17 +240,33 @@ namespace FinalProjectV2
                 Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold),
                 ForeColor = GetStatusForeColor(application.Status),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Text = application.Status
+                Text = application.Status,
+                Cursor = Cursors.Hand,
+                Tag = application
             };
 
             statusPill.Controls.Add(labelStatus);
 
             card.Controls.Add(statusPill);
+            card.Controls.Add(labelHint);
             card.Controls.Add(labelProvider);
             card.Controls.Add(labelName);
             card.Controls.Add(accent);
 
+            BindApplicationCardClick(card, application);
+
             return card;
+        }
+
+        private void BindApplicationCardClick(Control control, ScholarApplication application)
+        {
+            control.Tag = application;
+            control.Click += ApplicationCard_Click;
+
+            foreach (Control child in control.Controls)
+            {
+                BindApplicationCardClick(child, application);
+            }
         }
 
         private void ButtonPreview_Click(object sender, EventArgs e)
@@ -243,15 +281,46 @@ namespace FinalProjectV2
 
             using (ScholarshipPreview preview = new ScholarshipPreview())
             {
-                preview.SetScholarship(
-                    scholarship,
-                    sesh.CurrentUser,
-                    HandleSubmittedApplication);
+                preview.SetScholarship(scholarship, sesh.CurrentUser, HandleSubmittedApplication);
 
                 if (preview.ShowDialog(this) == DialogResult.OK)
                 {
                     ShowPage(PageSection.Applications);
                 }
+            }
+        }
+
+        private void ApplicationCard_Click(object sender, EventArgs e)
+        {
+            Control clickedControl = sender as Control;
+            ScholarApplication application = clickedControl != null ? clickedControl.Tag as ScholarApplication : null;
+
+            if (application == null)
+            {
+                return;
+            }
+
+            Scholarship scholarship = sado.GetScholarshipById(application.ScholarshipId);
+
+            if (scholarship == null)
+            {
+                MessageBox.Show(
+                    "Scholarship details could not be loaded.",
+                    "SchoolarLink",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (ScholarshipPreview preview = new ScholarshipPreview())
+            {
+                preview.SetApplicationPreview(
+                    scholarship,
+                    application,
+                    sesh.CurrentUser,
+                    HandleAcceptedApplication);
+
+                preview.ShowDialog(this);
             }
         }
 
@@ -266,7 +335,6 @@ namespace FinalProjectV2
 
             foreach (ScholarApplication item in applications)
             {
-
                 if (item.ScholarshipId == result.ScholarshipId)
                 {
                     existing = item;
@@ -290,6 +358,26 @@ namespace FinalProjectV2
             LoadApplicationCards();
         }
 
+        private void HandleAcceptedApplication(ScholarApplication result)
+        {
+            if (result == null)
+            {
+                return;
+            }
+
+            foreach (ScholarApplication item in applications)
+            {
+                if (item.ScholarshipId == result.ScholarshipId)
+                {
+                    item.Status = result.Status;
+                    break;
+                }
+            }
+
+            LoadApplicationCards();
+            ShowPage(PageSection.Applications);
+        }
+
         private Color GetStatusBackColor(string status)
         {
             switch (status)
@@ -298,6 +386,10 @@ namespace FinalProjectV2
                     return Color.FromArgb(225, 244, 232);
                 case "Rejected":
                     return Color.FromArgb(251, 232, 232);
+                case "Accepted":
+                    return Color.FromArgb(227, 239, 255);
+                case "Cancelled":
+                    return Color.FromArgb(242, 242, 242);
                 default:
                     return Color.FromArgb(255, 245, 220);
             }
@@ -311,6 +403,10 @@ namespace FinalProjectV2
                     return Color.FromArgb(38, 128, 70);
                 case "Rejected":
                     return Color.FromArgb(184, 51, 51);
+                case "Accepted":
+                    return Color.FromArgb(10, 54, 130);
+                case "Cancelled":
+                    return Color.FromArgb(110, 110, 110);
                 default:
                     return Color.FromArgb(160, 115, 0);
             }
@@ -344,7 +440,7 @@ namespace FinalProjectV2
 
                 LabelSectionTag.Text = "MY APPLICATIONS";
                 LabelSectionTitle.Text = "Application status";
-                LabelSectionSubtitle.Text = "Monitor whether your submitted scholarship applications are pending, approved, or rejected.";
+                LabelSectionSubtitle.Text = "Monitor your submitted applications and open any card to preview its scholarship details and attached requirements.";
 
                 SetActiveNav(ButtonNavApplications);
             }
