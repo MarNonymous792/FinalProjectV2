@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace FinalProjectV2
 {
     public partial class Login : Form
     {
-       
         public Login()
         {
             InitializeComponent();
+            LinkLabelForgotPassword.LinkClicked += LinkLabelForgotPassword_LinkClicked;
         }
 
         private void CheckBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -31,29 +30,36 @@ namespace FinalProjectV2
                     MessageBoxIcon.Warning);
                 return;
             }
-            else { 
-                
-                UserADO userADO = new UserADO();
-                User newUser = userADO.Login(identifier, password);
-                if (newUser != null) {
-                   Dashboard dashboard = new Dashboard(newUser);
-                    dashboard.Show();
-                    this.Hide();
 
-                }
-                else
-                {
-                    MessageBox.Show(
-                   "Invalid Credentials.",
-                   "SchoolarLink",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.Warning);
-                    return;
-                }
+            UserADO userADO = new UserADO();
+            User newUser = userADO.Login(identifier, password);
 
+            if (newUser != null)
+            {
+                Dashboard dashboard = new Dashboard(newUser);
+                dashboard.Show();
+                Hide();
+                return;
             }
 
-        } 
+            MessageBox.Show(
+                "Invalid Credentials.",
+                "SchoolarLink",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
+
+        private void LinkLabelForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm())
+            {
+                forgotPasswordForm.ShowDialog(this);
+            }
+
+            TextBoxPassword.Clear();
+            TextBoxIdentifier.Focus();
+        }
+
         private void ButtonSidebarCreateAccount_Click(object sender, EventArgs e)
         {
             using (CreateAcc createAcc = new CreateAcc())

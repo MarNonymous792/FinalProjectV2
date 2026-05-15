@@ -1,6 +1,8 @@
-﻿using System;
+﻿// Dashboard.cs
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace FinalProjectV2
@@ -19,6 +21,8 @@ namespace FinalProjectV2
         private readonly Color darkText = Color.FromArgb(26, 36, 56);
         private readonly Color lightText = Color.FromArgb(112, 125, 150);
 
+        private readonly Dictionary<string, Label> lockedProfileValueLabels = new Dictionary<string, Label>();
+
         public Dashboard(User user)
         {
             sesh.CurrentUser = user;
@@ -26,25 +30,240 @@ namespace FinalProjectV2
             applications = saado.GetUserApplications(user);
 
             InitializeComponent();
+            InitializeProfileLayout();
             LoadScholarshipCards();
             LoadApplicationCards();
             LoadProfileData();
             ShowPage(PageSection.Scholarships);
         }
 
+        private void InitializeProfileLayout()
+        {
+            PanelPageProfile.SuspendLayout();
+
+            LabelProfileName.Visible = false;
+            PanelProfileName.Visible = false;
+            LabelProfileBirthday.Visible = false;
+            PanelProfileBirthday.Visible = false;
+
+            CreateLockedProfileField(
+                "StudentId",
+                "Student ID",
+                new Point(15, 0),
+                new Point(15, 24),
+                new Size(541, 42));
+
+            CreateLockedProfileField(
+                "LastName",
+                "Lastname",
+                new Point(15, 81),
+                new Point(15, 105),
+                new Size(170, 42));
+
+            CreateLockedProfileField(
+                "FirstName",
+                "Firstname",
+                new Point(200, 81),
+                new Point(200, 105),
+                new Size(170, 42));
+
+            CreateLockedProfileField(
+                "MiddleName",
+                "Middlename",
+                new Point(385, 81),
+                new Point(385, 105),
+                new Size(171, 42));
+
+            CreateLockedProfileField(
+                "Birthday",
+                "Birthday",
+                new Point(15, 162),
+                new Point(15, 186),
+                new Size(255, 42));
+
+            TextBoxProfileEmail.TabIndex = 1;
+            TextBoxProfileContact.TabIndex = 2;
+            ButtonSaveProfile.TabIndex = 3;
+
+            PanelPageProfile.ResumeLayout(false);
+            PanelPageProfile.PerformLayout();
+        }
+
+        private void CreateLockedProfileField(string key, string title, Point labelLocation, Point panelLocation, Size panelSize)
+        {
+            Label titleLabel = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold),
+                ForeColor = darkText,
+                Location = labelLocation,
+                Text = title
+            };
+
+            Panel fieldPanel = new Panel
+            {
+                BackColor = Color.FromArgb(240, 242, 246),
+                Location = panelLocation,
+                Size = panelSize,
+                Cursor = Cursors.Default
+            };
+
+            Panel accentPanel = new Panel
+            {
+                BackColor = accentGold,
+                Dock = DockStyle.Left,
+                Width = 5
+            };
+
+            Label valueLabel = new Label
+            {
+                AutoEllipsis = true,
+                BackColor = Color.FromArgb(240, 242, 246),
+                Cursor = Cursors.Default,
+                Font = new Font("Segoe UI", 10.75F),
+                ForeColor = darkText,
+                Location = new Point(16, 10),
+                Size = new Size(panelSize.Width - 32, 24),
+                Text = string.Empty,
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+
+            fieldPanel.Controls.Add(valueLabel);
+            fieldPanel.Controls.Add(accentPanel);
+
+            PanelPageProfile.Controls.Add(titleLabel);
+            PanelPageProfile.Controls.Add(fieldPanel);
+
+            titleLabel.BringToFront();
+            fieldPanel.BringToFront();
+
+            lockedProfileValueLabels[key] = valueLabel;
+        }
+
         private void LoadProfileData()
         {
-            TextBoxProfileName.Text = string.IsNullOrWhiteSpace(sesh.CurrentUser.FirstName)
-                ? "Juan Dela Cruz"
-                : sesh.CurrentUser.FirstName;
+            SetLockedProfileFieldValue(
+                "StudentId",
+                GetUserStringValue(
+                    "N/A",
+                    "StudentId",
+                    "StudentID",
+                    "StudentNo",
+                    "StudentNumber",
+                    "IdNumber",
+                    "IdNo",
+                    "ScholarId"));
 
-            TextBoxProfileBirthday.Text = sesh.CurrentUser.birthdate.ToString("MMM dd yyyy");
+            SetLockedProfileFieldValue(
+                "LastName",
+                GetUserStringValue(
+                    "N/A",
+                    "LastName",
+                    "Lastname",
+                    "Surname",
+                    "FamilyName"));
+
+            SetLockedProfileFieldValue(
+                "FirstName",
+                GetUserStringValue(
+                    "Juan",
+                    "FirstName",
+                    "Firstname",
+                    "GivenName"));
+
+            SetLockedProfileFieldValue(
+                "MiddleName",
+                GetUserStringValue(
+                    "N/A",
+                    "MiddleName",
+                    "Middlename",
+                    "MiddleInitial"));
+
+            SetLockedProfileFieldValue(
+                "Birthday",
+                GetUserDateValue(
+                    "MMM dd yyyy",
+                    "N/A",
+                    "birthdate",
+                    "Birthdate",
+                    "Birthday",
+                    "DateOfBirth"));
+
             TextBoxProfileEmail.Text = string.IsNullOrWhiteSpace(sesh.CurrentUser.Email)
                 ? "juan.delacruz@example.com"
                 : sesh.CurrentUser.Email;
+
             TextBoxProfileContact.Text = string.IsNullOrWhiteSpace(sesh.CurrentUser.ContactNo)
                 ? "09123456789"
                 : sesh.CurrentUser.ContactNo;
+        }
+
+        private void SetLockedProfileFieldValue(string key, string value)
+        {
+            if (lockedProfileValueLabels.TryGetValue(key, out Label label))
+            {
+                label.Text = value;
+            }
+        }
+
+        private object GetUserPropertyValue(params string[] propertyNames)
+        {
+            if (sesh.CurrentUser == null)
+            {
+                return null;
+            }
+
+            Type userType = sesh.CurrentUser.GetType();
+
+            foreach (string propertyName in propertyNames)
+            {
+                PropertyInfo property = userType.GetProperty(
+                    propertyName,
+                    BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+
+                if (property != null)
+                {
+                    return property.GetValue(sesh.CurrentUser);
+                }
+            }
+
+            return null;
+        }
+
+        private string GetUserStringValue(string fallback, params string[] propertyNames)
+        {
+            object value = GetUserPropertyValue(propertyNames);
+
+            if (value == null)
+            {
+                return fallback;
+            }
+
+            string text = value.ToString()?.Trim();
+
+            return string.IsNullOrWhiteSpace(text) ? fallback : text;
+        }
+
+        private string GetUserDateValue(string format, string fallback, params string[] propertyNames)
+        {
+            object value = GetUserPropertyValue(propertyNames);
+
+            if (value == null)
+            {
+                return fallback;
+            }
+
+            if (value is DateTime dateTimeValue)
+            {
+                return dateTimeValue.ToString(format);
+            }
+
+            if (DateTime.TryParse(value.ToString(), out DateTime parsedDate))
+            {
+                return parsedDate.ToString(format);
+            }
+
+            return fallback;
         }
 
         private void LoadScholarshipCards()
