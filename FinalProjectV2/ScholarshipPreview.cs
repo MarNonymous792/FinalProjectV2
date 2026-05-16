@@ -459,7 +459,6 @@ namespace FinalProjectV2
                 "SchoolarLink",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
             DialogResult = DialogResult.OK;
             Close();
         }

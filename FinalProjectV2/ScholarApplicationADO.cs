@@ -46,18 +46,7 @@ namespace FinalProjectV2
             using (MySqlConnection conn = DBConnection.GetConnection())
             {
                 string sql = @"
-                    SELECT
-                        a.applicationid AS ApplicationId,
-                        a.scholarshipId AS ScholarshipId,
-                        a.userid AS UserId,
-                        a.status AS Status,
-                        a.date_submitted AS DateApplied,
-                        a.cvpath AS ApplicationLetterOrCvPath,
-                        a.studyloadpath AS StudyLoadPath,
-                        a.goodmoralpath AS GoodMoralPath,
-                        a.previousgradespath AS PreviousGradesPath,
-                        a.taxreturnpath AS ParentTaxReturnsPath
-                    FROM application a
+                    SELECT * FROM application a
                     WHERE a.userid = @uid
                     ORDER BY a.date_submitted DESC, a.applicationid DESC";
 
@@ -72,20 +61,36 @@ namespace FinalProjectV2
                         {
                             list.Add(new ScholarApplication
                             {
-                                ApplicationId = GetInt32(reader, "ApplicationId"),
-                                ScholarshipId = GetInt32(reader, "ScholarshipId"),
-                                UserId = GetString(reader, "UserId"),
-                                Status = GetString(reader, "Status"),
-                                DateApplied = GetDateTime(reader, "DateApplied"),
-                                ApplicationLetterOrCvPath = GetString(reader, "ApplicationLetterOrCvPath"),
-                                StudyLoadPath = GetString(reader, "StudyLoadPath"),
-                                GoodMoralPath = GetString(reader, "GoodMoralPath"),
-                                PreviousGradesPath = GetString(reader, "PreviousGradesPath"),
-                                ParentTaxReturnsPath = GetString(reader, "ParentTaxReturnsPath")
+                                ApplicationId = GetInt32(reader, "applicationId"),
+                                ScholarshipId = GetInt32(reader, "scholarshipId"),
+                                UserId = GetString(reader, "userid"),
+                                Status = GetString(reader, "status"),
+                                DateApplied = GetDateTime(reader, "date_submitted"),
+                                ApplicationLetterOrCvPath = GetString(reader, "cvpath"),
+                                StudyLoadPath = GetString(reader, "studyloadpath"),
+                                GoodMoralPath = GetString(reader, "goodmoralpath"),
+                                PreviousGradesPath = GetString(reader, "previousgradespath"),
+                                ParentTaxReturnsPath = GetString(reader, "taxreturnpath")
                             });
                         }
                     }
                 }
+            }
+
+            ScholarApplication acceptedApp = null;
+            foreach (var app in list)
+            {
+                if (string.Equals(app.Status, "Accepted", StringComparison.OrdinalIgnoreCase))
+                {
+                    acceptedApp = app;
+                    break;
+                }
+            }
+
+            if (acceptedApp != null)
+            {
+                list.Clear();
+                list.Add(acceptedApp);
             }
 
             return list;

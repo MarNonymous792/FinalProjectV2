@@ -64,10 +64,9 @@ namespace FinalProjectV2
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-
                     cmd.Parameters.AddWithValue("@userCourse", user.Course);
                     cmd.Parameters.AddWithValue("@userYear", user.YearLevel);
-                    cmd.Parameters.AddWithValue("@uid", user.UserID); 
+                    cmd.Parameters.AddWithValue("@uid", user.UserID);
 
                     conn.Open();
 

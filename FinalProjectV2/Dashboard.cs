@@ -28,7 +28,7 @@ namespace FinalProjectV2
             sesh.CurrentUser = user;
             scholarships = sado.GetSuitableScholarships(sesh.CurrentUser);
             applications = saado.GetUserApplications(user);
-
+            
             InitializeComponent();
             InitializeProfileLayout();
             LoadScholarshipCards();
@@ -47,7 +47,7 @@ namespace FinalProjectV2
             PanelProfileBirthday.Visible = false;
 
             CreateLockedProfileField(
-                "StudentId",
+                "UserId",
                 "Student ID",
                 new Point(15, 0),
                 new Point(15, 24),
@@ -143,16 +143,10 @@ namespace FinalProjectV2
         private void LoadProfileData()
         {
             SetLockedProfileFieldValue(
-                "StudentId",
+                "UserId",
                 GetUserStringValue(
                     "N/A",
-                    "StudentId",
-                    "StudentID",
-                    "StudentNo",
-                    "StudentNumber",
-                    "IdNumber",
-                    "IdNo",
-                    "ScholarId"));
+                    "UserId"));
 
             SetLockedProfileFieldValue(
                 "LastName",
@@ -690,6 +684,8 @@ namespace FinalProjectV2
 
         private void ButtonNavDashboard_Click(object sender, EventArgs e)
         {
+            scholarships = sado.GetSuitableScholarships(sesh.CurrentUser);
+            LoadScholarshipCards();
             ShowPage(PageSection.Scholarships);
         }
 
@@ -735,7 +731,18 @@ namespace FinalProjectV2
             sesh.CurrentUser.Email = TextBoxProfileEmail.Text.Trim();
             sesh.CurrentUser.ContactNo = TextBoxProfileContact.Text.Trim();
 
-            MessageBox.Show("Profile settings updated successfully.", "SchoolarLink", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UserADO uado = new UserADO();
+
+            if(uado.UpdateUserContacts(
+                sesh.CurrentUser.UserID,
+                sesh.CurrentUser.Email,
+                sesh.CurrentUser.ContactNo))
+            {
+                MessageBox.Show("Profile settings updated successfully.", "SchoolarLink", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadProfileData();
+            }
+
+
         }
 
         private enum PageSection
