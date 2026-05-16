@@ -80,6 +80,10 @@
             this.PanelRight = new System.Windows.Forms.Panel();
             this.PanelBody = new System.Windows.Forms.Panel();
             this.PanelCard = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TextBoxStudentID = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ButtonCreateAccount = new System.Windows.Forms.Button();
             this.ButtonBackToLogin = new System.Windows.Forms.Button();
             this.CheckBoxShowPassword = new System.Windows.Forms.CheckBox();
@@ -128,14 +132,11 @@
             this.LabelHeaderUser = new System.Windows.Forms.Label();
             this.LabelHeaderBell = new System.Windows.Forms.Label();
             this.LabelHeaderTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TextBoxStudentID = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.PanelSidebar.SuspendLayout();
             this.PanelRight.SuspendLayout();
             this.PanelBody.SuspendLayout();
             this.PanelCard.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.PanelConfirmPassword.SuspendLayout();
             this.PanelPassword.SuspendLayout();
             this.PanelContactNumber.SuspendLayout();
@@ -145,7 +146,6 @@
             this.PanelFirstName.SuspendLayout();
             this.PanelUsername.SuspendLayout();
             this.PanelHeader.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelSidebar
@@ -270,6 +270,47 @@
             this.PanelCard.Name = "PanelCard";
             this.PanelCard.Size = new System.Drawing.Size(640, 730);
             this.PanelCard.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.panel1.Controls.Add(this.TextBoxStudentID);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(326, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(244, 42);
+            this.panel1.TabIndex = 6;
+            // 
+            // TextBoxStudentID
+            // 
+            this.TextBoxStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.TextBoxStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxStudentID.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.TextBoxStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
+            this.TextBoxStudentID.Location = new System.Drawing.Point(16, 12);
+            this.TextBoxStudentID.Name = "TextBoxStudentID";
+            this.TextBoxStudentID.Size = new System.Drawing.Size(225, 24);
+            this.TextBoxStudentID.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 42);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
+            this.label1.Location = new System.Drawing.Point(326, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "StudentID";
             // 
             // ButtonCreateAccount
             // 
@@ -784,47 +825,6 @@
             this.LabelHeaderTitle.TabIndex = 0;
             this.LabelHeaderTitle.Text = "Scholar Portal";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.panel1.Controls.Add(this.TextBoxStudentID);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(326, 154);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 42);
-            this.panel1.TabIndex = 6;
-            // 
-            // TextBoxStudentID
-            // 
-            this.TextBoxStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.TextBoxStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxStudentID.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.TextBoxStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
-            this.TextBoxStudentID.Location = new System.Drawing.Point(16, 12);
-            this.TextBoxStudentID.Name = "TextBoxStudentID";
-            this.TextBoxStudentID.Size = new System.Drawing.Size(225, 24);
-            this.TextBoxStudentID.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 42);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(326, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "StudentID";
-            // 
             // CreateAcc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -837,6 +837,7 @@
             this.MaximumSize = new System.Drawing.Size(966, 689);
             this.MinimumSize = new System.Drawing.Size(966, 689);
             this.Name = "CreateAcc";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SchoolarLink - Create account";
             this.PanelSidebar.ResumeLayout(false);
@@ -845,6 +846,8 @@
             this.PanelBody.ResumeLayout(false);
             this.PanelCard.ResumeLayout(false);
             this.PanelCard.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.PanelConfirmPassword.ResumeLayout(false);
             this.PanelConfirmPassword.PerformLayout();
             this.PanelPassword.ResumeLayout(false);
@@ -863,8 +866,6 @@
             this.PanelUsername.PerformLayout();
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

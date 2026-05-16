@@ -160,6 +160,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +177,9 @@
     </Compile>
     <EmbeddedResource Include="ScholarshipEntry.resx">
       <DependentUpon>ScholarshipEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScholarshipPreview.resx">
+      <DependentUpon>ScholarshipPreview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

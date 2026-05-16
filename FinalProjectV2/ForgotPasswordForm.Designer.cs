@@ -67,7 +67,6 @@
             this.ButtonSidebarBackToSignIn = new System.Windows.Forms.Button();
             this.ButtonSidebarForgotPassword = new System.Windows.Forms.Button();
             this.LabelBrand = new System.Windows.Forms.Label();
-
             this.PanelRight = new System.Windows.Forms.Panel();
             this.PanelBody = new System.Windows.Forms.Panel();
             this.PanelForgotPasswordCard = new System.Windows.Forms.Panel();
@@ -104,7 +103,6 @@
             this.LabelHeaderUser = new System.Windows.Forms.Label();
             this.LabelHeaderBell = new System.Windows.Forms.Label();
             this.LabelHeaderTitle = new System.Windows.Forms.Label();
-
             this.PanelSidebar.SuspendLayout();
             this.PanelRight.SuspendLayout();
             this.PanelBody.SuspendLayout();
@@ -118,8 +116,9 @@
             this.PanelStudentId.SuspendLayout();
             this.PanelHeader.SuspendLayout();
             this.SuspendLayout();
-
+            // 
             // PanelSidebar
+            // 
             this.PanelSidebar.BackColor = System.Drawing.Color.White;
             this.PanelSidebar.Controls.Add(this.LabelSidebarHint);
             this.PanelSidebar.Controls.Add(this.ButtonSidebarBackToSignIn);
@@ -130,23 +129,25 @@
             this.PanelSidebar.Name = "PanelSidebar";
             this.PanelSidebar.Size = new System.Drawing.Size(240, 642);
             this.PanelSidebar.TabIndex = 0;
-
+            // 
             // LabelSidebarHint
+            // 
             this.LabelSidebarHint.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelSidebarHint.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelSidebarHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelSidebarHint.Location = new System.Drawing.Point(24, 244);
             this.LabelSidebarHint.Name = "LabelSidebarHint";
             this.LabelSidebarHint.Size = new System.Drawing.Size(187, 72);
             this.LabelSidebarHint.TabIndex = 3;
             this.LabelSidebarHint.Text = "Recover access to your scholarship account and set a new password.";
-
+            // 
             // ButtonSidebarBackToSignIn
+            // 
             this.ButtonSidebarBackToSignIn.BackColor = System.Drawing.Color.White;
             this.ButtonSidebarBackToSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSidebarBackToSignIn.FlatAppearance.BorderSize = 0;
             this.ButtonSidebarBackToSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSidebarBackToSignIn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.ButtonSidebarBackToSignIn.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonSidebarBackToSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonSidebarBackToSignIn.Location = new System.Drawing.Point(18, 176);
             this.ButtonSidebarBackToSignIn.Name = "ButtonSidebarBackToSignIn";
             this.ButtonSidebarBackToSignIn.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
@@ -156,9 +157,10 @@
             this.ButtonSidebarBackToSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonSidebarBackToSignIn.UseVisualStyleBackColor = false;
             this.ButtonSidebarBackToSignIn.Click += new System.EventHandler(this.ButtonSidebarBackToSignIn_Click);
-
+            // 
             // ButtonSidebarForgotPassword
-            this.ButtonSidebarForgotPassword.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            // 
+            this.ButtonSidebarForgotPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(54)))), ((int)(((byte)(130)))));
             this.ButtonSidebarForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSidebarForgotPassword.FlatAppearance.BorderSize = 0;
             this.ButtonSidebarForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,18 +174,20 @@
             this.ButtonSidebarForgotPassword.Text = "Forgot password";
             this.ButtonSidebarForgotPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonSidebarForgotPassword.UseVisualStyleBackColor = false;
-
+            // 
             // LabelBrand
+            // 
             this.LabelBrand.AutoSize = true;
             this.LabelBrand.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.LabelBrand.ForeColor = System.Drawing.Color.FromArgb(11, 53, 124);
+            this.LabelBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(53)))), ((int)(((byte)(124)))));
             this.LabelBrand.Location = new System.Drawing.Point(24, 34);
             this.LabelBrand.Name = "LabelBrand";
             this.LabelBrand.Size = new System.Drawing.Size(219, 46);
             this.LabelBrand.TabIndex = 0;
             this.LabelBrand.Text = "SchoolarLink";
-
+            // 
             // PanelRight
+            // 
             this.PanelRight.Controls.Add(this.PanelBody);
             this.PanelRight.Controls.Add(this.PanelHeader);
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -191,17 +195,19 @@
             this.PanelRight.Name = "PanelRight";
             this.PanelRight.Size = new System.Drawing.Size(708, 642);
             this.PanelRight.TabIndex = 1;
-
+            // 
             // PanelBody
-            this.PanelBody.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
+            // 
+            this.PanelBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.PanelBody.Controls.Add(this.PanelForgotPasswordCard);
             this.PanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBody.Location = new System.Drawing.Point(0, 68);
             this.PanelBody.Name = "PanelBody";
             this.PanelBody.Size = new System.Drawing.Size(708, 574);
             this.PanelBody.TabIndex = 1;
-
+            // 
             // PanelForgotPasswordCard
+            // 
             this.PanelForgotPasswordCard.BackColor = System.Drawing.Color.White;
             this.PanelForgotPasswordCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelForgotPasswordCard.Controls.Add(this.LabelFooterNote);
@@ -214,18 +220,20 @@
             this.PanelForgotPasswordCard.Name = "PanelForgotPasswordCard";
             this.PanelForgotPasswordCard.Size = new System.Drawing.Size(540, 500);
             this.PanelForgotPasswordCard.TabIndex = 0;
-
+            // 
             // LabelFooterNote
+            // 
             this.LabelFooterNote.AutoSize = true;
             this.LabelFooterNote.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelFooterNote.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelFooterNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelFooterNote.Location = new System.Drawing.Point(46, 456);
             this.LabelFooterNote.Name = "LabelFooterNote";
-            this.LabelFooterNote.Size = new System.Drawing.Size(313, 21);
+            this.LabelFooterNote.Size = new System.Drawing.Size(338, 21);
             this.LabelFooterNote.TabIndex = 5;
             this.LabelFooterNote.Text = "Use your registered account details to continue.";
-
+            // 
             // PanelReset
+            // 
             this.PanelReset.Controls.Add(this.ButtonResetPassword);
             this.PanelReset.Controls.Add(this.CheckBoxShowPasswords);
             this.PanelReset.Controls.Add(this.PanelConfirmPassword);
@@ -237,9 +245,10 @@
             this.PanelReset.Size = new System.Drawing.Size(538, 250);
             this.PanelReset.TabIndex = 4;
             this.PanelReset.Visible = false;
-
+            // 
             // ButtonResetPassword
-            this.ButtonResetPassword.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            // 
+            this.ButtonResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(54)))), ((int)(((byte)(130)))));
             this.ButtonResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonResetPassword.FlatAppearance.BorderSize = 0;
             this.ButtonResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -252,11 +261,12 @@
             this.ButtonResetPassword.Text = "Reset password";
             this.ButtonResetPassword.UseVisualStyleBackColor = false;
             this.ButtonResetPassword.Click += new System.EventHandler(this.ButtonResetPassword_Click);
-
+            // 
             // CheckBoxShowPasswords
+            // 
             this.CheckBoxShowPasswords.AutoSize = true;
             this.CheckBoxShowPasswords.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.CheckBoxShowPasswords.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.CheckBoxShowPasswords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.CheckBoxShowPasswords.Location = new System.Drawing.Point(46, 155);
             this.CheckBoxShowPasswords.Name = "CheckBoxShowPasswords";
             this.CheckBoxShowPasswords.Size = new System.Drawing.Size(142, 25);
@@ -264,84 +274,93 @@
             this.CheckBoxShowPasswords.Text = "Show password";
             this.CheckBoxShowPasswords.UseVisualStyleBackColor = true;
             this.CheckBoxShowPasswords.CheckedChanged += new System.EventHandler(this.CheckBoxShowPasswords_CheckedChanged);
-
+            // 
             // PanelConfirmPassword
-            this.PanelConfirmPassword.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.PanelConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelConfirmPassword.Controls.Add(this.TextBoxConfirmPassword);
             this.PanelConfirmPassword.Controls.Add(this.PanelConfirmPasswordAccent);
             this.PanelConfirmPassword.Location = new System.Drawing.Point(46, 99);
             this.PanelConfirmPassword.Name = "PanelConfirmPassword";
             this.PanelConfirmPassword.Size = new System.Drawing.Size(430, 42);
             this.PanelConfirmPassword.TabIndex = 3;
-
+            // 
             // TextBoxConfirmPassword
-            this.TextBoxConfirmPassword.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.TextBoxConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.TextBoxConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.TextBoxConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.TextBoxConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.TextBoxConfirmPassword.Location = new System.Drawing.Point(16, 11);
             this.TextBoxConfirmPassword.Name = "TextBoxConfirmPassword";
             this.TextBoxConfirmPassword.Size = new System.Drawing.Size(401, 25);
             this.TextBoxConfirmPassword.TabIndex = 1;
             this.TextBoxConfirmPassword.UseSystemPasswordChar = true;
-
+            // 
             // PanelConfirmPasswordAccent
-            this.PanelConfirmPasswordAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            // 
+            this.PanelConfirmPasswordAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelConfirmPasswordAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelConfirmPasswordAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelConfirmPasswordAccent.Name = "PanelConfirmPasswordAccent";
             this.PanelConfirmPasswordAccent.Size = new System.Drawing.Size(5, 42);
             this.PanelConfirmPasswordAccent.TabIndex = 0;
-
+            // 
             // LabelConfirmPassword
+            // 
             this.LabelConfirmPassword.AutoSize = true;
             this.LabelConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.LabelConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelConfirmPassword.Location = new System.Drawing.Point(46, 75);
             this.LabelConfirmPassword.Name = "LabelConfirmPassword";
-            this.LabelConfirmPassword.Size = new System.Drawing.Size(154, 25);
+            this.LabelConfirmPassword.Size = new System.Drawing.Size(162, 25);
             this.LabelConfirmPassword.TabIndex = 2;
             this.LabelConfirmPassword.Text = "Confirm Password";
-
+            // 
             // PanelNewPassword
-            this.PanelNewPassword.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.PanelNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelNewPassword.Controls.Add(this.TextBoxNewPassword);
             this.PanelNewPassword.Controls.Add(this.PanelNewPasswordAccent);
             this.PanelNewPassword.Location = new System.Drawing.Point(46, 24);
             this.PanelNewPassword.Name = "PanelNewPassword";
             this.PanelNewPassword.Size = new System.Drawing.Size(430, 42);
             this.PanelNewPassword.TabIndex = 1;
-
+            // 
             // TextBoxNewPassword
-            this.TextBoxNewPassword.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.TextBoxNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.TextBoxNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxNewPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.TextBoxNewPassword.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.TextBoxNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.TextBoxNewPassword.Location = new System.Drawing.Point(16, 11);
             this.TextBoxNewPassword.Name = "TextBoxNewPassword";
             this.TextBoxNewPassword.Size = new System.Drawing.Size(401, 25);
             this.TextBoxNewPassword.TabIndex = 1;
             this.TextBoxNewPassword.UseSystemPasswordChar = true;
-
+            // 
             // PanelNewPasswordAccent
-            this.PanelNewPasswordAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            // 
+            this.PanelNewPasswordAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelNewPasswordAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelNewPasswordAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelNewPasswordAccent.Name = "PanelNewPasswordAccent";
             this.PanelNewPasswordAccent.Size = new System.Drawing.Size(5, 42);
             this.PanelNewPasswordAccent.TabIndex = 0;
-
+            // 
             // LabelNewPassword
+            // 
             this.LabelNewPassword.AutoSize = true;
             this.LabelNewPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.LabelNewPassword.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelNewPassword.Location = new System.Drawing.Point(46, 0);
             this.LabelNewPassword.Name = "LabelNewPassword";
-            this.LabelNewPassword.Size = new System.Drawing.Size(132, 25);
+            this.LabelNewPassword.Size = new System.Drawing.Size(133, 25);
             this.LabelNewPassword.TabIndex = 0;
             this.LabelNewPassword.Text = "New Password";
-
+            // 
             // PanelVerify
+            // 
             this.PanelVerify.Controls.Add(this.ButtonSubmitVerification);
             this.PanelVerify.Controls.Add(this.PanelEmail);
             this.PanelVerify.Controls.Add(this.LabelEmail);
@@ -353,9 +372,10 @@
             this.PanelVerify.Name = "PanelVerify";
             this.PanelVerify.Size = new System.Drawing.Size(538, 290);
             this.PanelVerify.TabIndex = 3;
-
+            // 
             // ButtonSubmitVerification
-            this.ButtonSubmitVerification.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            // 
+            this.ButtonSubmitVerification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(54)))), ((int)(((byte)(130)))));
             this.ButtonSubmitVerification.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSubmitVerification.FlatAppearance.BorderSize = 0;
             this.ButtonSubmitVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -368,149 +388,165 @@
             this.ButtonSubmitVerification.Text = "Submit";
             this.ButtonSubmitVerification.UseVisualStyleBackColor = false;
             this.ButtonSubmitVerification.Click += new System.EventHandler(this.ButtonSubmitVerification_Click);
-
+            // 
             // PanelEmail
-            this.PanelEmail.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.PanelEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelEmail.Controls.Add(this.TextBoxEmail);
             this.PanelEmail.Controls.Add(this.PanelEmailAccent);
             this.PanelEmail.Location = new System.Drawing.Point(46, 174);
             this.PanelEmail.Name = "PanelEmail";
             this.PanelEmail.Size = new System.Drawing.Size(430, 42);
             this.PanelEmail.TabIndex = 5;
-
+            // 
             // TextBoxEmail
-            this.TextBoxEmail.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.TextBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.TextBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.TextBoxEmail.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.TextBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.TextBoxEmail.Location = new System.Drawing.Point(16, 11);
             this.TextBoxEmail.Name = "TextBoxEmail";
             this.TextBoxEmail.Size = new System.Drawing.Size(401, 25);
             this.TextBoxEmail.TabIndex = 1;
-
+            // 
             // PanelEmailAccent
-            this.PanelEmailAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            // 
+            this.PanelEmailAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelEmailAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelEmailAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelEmailAccent.Name = "PanelEmailAccent";
             this.PanelEmailAccent.Size = new System.Drawing.Size(5, 42);
             this.PanelEmailAccent.TabIndex = 0;
-
+            // 
             // LabelEmail
+            // 
             this.LabelEmail.AutoSize = true;
             this.LabelEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelEmail.Location = new System.Drawing.Point(46, 150);
             this.LabelEmail.Name = "LabelEmail";
-            this.LabelEmail.Size = new System.Drawing.Size(125, 25);
+            this.LabelEmail.Size = new System.Drawing.Size(128, 25);
             this.LabelEmail.TabIndex = 4;
             this.LabelEmail.Text = "Email Address";
-
+            // 
             // PanelUsername
-            this.PanelUsername.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.PanelUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelUsername.Controls.Add(this.TextBoxUsername);
             this.PanelUsername.Controls.Add(this.PanelUsernameAccent);
             this.PanelUsername.Location = new System.Drawing.Point(46, 99);
             this.PanelUsername.Name = "PanelUsername";
             this.PanelUsername.Size = new System.Drawing.Size(430, 42);
             this.PanelUsername.TabIndex = 3;
-
+            // 
             // TextBoxUsername
-            this.TextBoxUsername.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.TextBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.TextBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.TextBoxUsername.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.TextBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.TextBoxUsername.Location = new System.Drawing.Point(16, 11);
             this.TextBoxUsername.Name = "TextBoxUsername";
             this.TextBoxUsername.Size = new System.Drawing.Size(401, 25);
             this.TextBoxUsername.TabIndex = 1;
-
+            // 
             // PanelUsernameAccent
-            this.PanelUsernameAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            // 
+            this.PanelUsernameAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelUsernameAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelUsernameAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelUsernameAccent.Name = "PanelUsernameAccent";
             this.PanelUsernameAccent.Size = new System.Drawing.Size(5, 42);
             this.PanelUsernameAccent.TabIndex = 0;
-
+            // 
             // LabelUsername
+            // 
             this.LabelUsername.AutoSize = true;
             this.LabelUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.LabelUsername.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelUsername.Location = new System.Drawing.Point(46, 75);
             this.LabelUsername.Name = "LabelUsername";
             this.LabelUsername.Size = new System.Drawing.Size(96, 25);
             this.LabelUsername.TabIndex = 2;
             this.LabelUsername.Text = "Username";
-
+            // 
             // PanelStudentId
-            this.PanelStudentId.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.PanelStudentId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelStudentId.Controls.Add(this.TextBoxStudentId);
             this.PanelStudentId.Controls.Add(this.PanelStudentIdAccent);
             this.PanelStudentId.Location = new System.Drawing.Point(46, 24);
             this.PanelStudentId.Name = "PanelStudentId";
             this.PanelStudentId.Size = new System.Drawing.Size(430, 42);
             this.PanelStudentId.TabIndex = 1;
-
+            // 
             // TextBoxStudentId
-            this.TextBoxStudentId.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            // 
+            this.TextBoxStudentId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.TextBoxStudentId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxStudentId.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.TextBoxStudentId.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.TextBoxStudentId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.TextBoxStudentId.Location = new System.Drawing.Point(16, 11);
             this.TextBoxStudentId.Name = "TextBoxStudentId";
             this.TextBoxStudentId.Size = new System.Drawing.Size(401, 25);
             this.TextBoxStudentId.TabIndex = 1;
-
+            // 
             // PanelStudentIdAccent
-            this.PanelStudentIdAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            // 
+            this.PanelStudentIdAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelStudentIdAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelStudentIdAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelStudentIdAccent.Name = "PanelStudentIdAccent";
             this.PanelStudentIdAccent.Size = new System.Drawing.Size(5, 42);
             this.PanelStudentIdAccent.TabIndex = 0;
-
+            // 
             // LabelStudentId
+            // 
             this.LabelStudentId.AutoSize = true;
             this.LabelStudentId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.LabelStudentId.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelStudentId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelStudentId.Location = new System.Drawing.Point(46, 0);
             this.LabelStudentId.Name = "LabelStudentId";
-            this.LabelStudentId.Size = new System.Drawing.Size(95, 25);
+            this.LabelStudentId.Size = new System.Drawing.Size(101, 25);
             this.LabelStudentId.TabIndex = 0;
             this.LabelStudentId.Text = "Student ID";
-
+            // 
             // LabelSubtitle
+            // 
             this.LabelSubtitle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.LabelSubtitle.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelSubtitle.Location = new System.Drawing.Point(46, 102);
             this.LabelSubtitle.Name = "LabelSubtitle";
             this.LabelSubtitle.Size = new System.Drawing.Size(430, 44);
             this.LabelSubtitle.TabIndex = 2;
             this.LabelSubtitle.Text = "Enter your account details to continue with password recovery.";
-
+            // 
             // LabelTitle
+            // 
             this.LabelTitle.AutoSize = true;
             this.LabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 26F, System.Drawing.FontStyle.Bold);
-            this.LabelTitle.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelTitle.Location = new System.Drawing.Point(42, 50);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(362, 60);
+            this.LabelTitle.Size = new System.Drawing.Size(359, 60);
             this.LabelTitle.TabIndex = 1;
             this.LabelTitle.Text = "Forgot password";
-
+            // 
             // LabelPortal
+            // 
             this.LabelPortal.AutoSize = true;
             this.LabelPortal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.LabelPortal.ForeColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.LabelPortal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.LabelPortal.Location = new System.Drawing.Point(46, 28);
             this.LabelPortal.Name = "LabelPortal";
-            this.LabelPortal.Size = new System.Drawing.Size(260, 23);
+            this.LabelPortal.Size = new System.Drawing.Size(256, 23);
             this.LabelPortal.TabIndex = 0;
             this.LabelPortal.Text = "PASSWORD RECOVERY PORTAL";
-
+            // 
             // PanelHeader
-            this.PanelHeader.BackColor = System.Drawing.Color.FromArgb(11, 53, 124);
+            // 
+            this.PanelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(53)))), ((int)(((byte)(124)))));
             this.PanelHeader.Controls.Add(this.LabelHeaderUser);
             this.PanelHeader.Controls.Add(this.LabelHeaderBell);
             this.PanelHeader.Controls.Add(this.LabelHeaderTitle);
@@ -519,8 +555,9 @@
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(708, 68);
             this.PanelHeader.TabIndex = 0;
-
+            // 
             // LabelHeaderUser
+            // 
             this.LabelHeaderUser.AutoSize = true;
             this.LabelHeaderUser.Font = new System.Drawing.Font("Segoe UI Symbol", 16F);
             this.LabelHeaderUser.ForeColor = System.Drawing.Color.White;
@@ -529,8 +566,9 @@
             this.LabelHeaderUser.Size = new System.Drawing.Size(40, 37);
             this.LabelHeaderUser.TabIndex = 2;
             this.LabelHeaderUser.Text = "◉";
-
+            // 
             // LabelHeaderBell
+            // 
             this.LabelHeaderBell.AutoSize = true;
             this.LabelHeaderBell.Font = new System.Drawing.Font("Segoe UI Symbol", 16F);
             this.LabelHeaderBell.ForeColor = System.Drawing.Color.White;
@@ -539,8 +577,9 @@
             this.LabelHeaderBell.Size = new System.Drawing.Size(40, 37);
             this.LabelHeaderBell.TabIndex = 1;
             this.LabelHeaderBell.Text = "◌";
-
+            // 
             // LabelHeaderTitle
+            // 
             this.LabelHeaderTitle.AutoSize = true;
             this.LabelHeaderTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderTitle.ForeColor = System.Drawing.Color.White;
@@ -549,10 +588,11 @@
             this.LabelHeaderTitle.Size = new System.Drawing.Size(137, 28);
             this.LabelHeaderTitle.TabIndex = 0;
             this.LabelHeaderTitle.Text = "Scholar Portal";
-
+            // 
             // ForgotPasswordForm
+            // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(948, 642);
             this.Controls.Add(this.PanelRight);
             this.Controls.Add(this.PanelSidebar);
@@ -562,9 +602,9 @@
             this.MaximumSize = new System.Drawing.Size(966, 689);
             this.MinimumSize = new System.Drawing.Size(966, 689);
             this.Name = "ForgotPasswordForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SchoolarLink - Forgot password";
-
             this.PanelSidebar.ResumeLayout(false);
             this.PanelSidebar.PerformLayout();
             this.PanelRight.ResumeLayout(false);
@@ -588,6 +628,7 @@
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.ResumeLayout(false);
+
         }
     }
 }

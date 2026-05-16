@@ -113,13 +113,13 @@
             this.PanelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelSidebar.Location = new System.Drawing.Point(0, 0);
             this.PanelSidebar.Name = "PanelSidebar";
-            this.PanelSidebar.Size = new System.Drawing.Size(240, 650);
+            this.PanelSidebar.Size = new System.Drawing.Size(240, 642);
             this.PanelSidebar.TabIndex = 0;
             // 
             // LabelSidebarHint
             // 
             this.LabelSidebarHint.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelSidebarHint.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelSidebarHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelSidebarHint.Location = new System.Drawing.Point(24, 177);
             this.LabelSidebarHint.Name = "LabelSidebarHint";
             this.LabelSidebarHint.Size = new System.Drawing.Size(188, 120);
@@ -128,7 +128,7 @@
             // 
             // ButtonSidebarApply
             // 
-            this.ButtonSidebarApply.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            this.ButtonSidebarApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(54)))), ((int)(((byte)(130)))));
             this.ButtonSidebarApply.FlatAppearance.BorderSize = 0;
             this.ButtonSidebarApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSidebarApply.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
@@ -146,10 +146,10 @@
             // 
             this.LabelBrand.AutoSize = true;
             this.LabelBrand.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.LabelBrand.ForeColor = System.Drawing.Color.FromArgb(11, 53, 124);
+            this.LabelBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(53)))), ((int)(((byte)(124)))));
             this.LabelBrand.Location = new System.Drawing.Point(24, 34);
             this.LabelBrand.Name = "LabelBrand";
-            this.LabelBrand.Size = new System.Drawing.Size(177, 37);
+            this.LabelBrand.Size = new System.Drawing.Size(219, 46);
             this.LabelBrand.TabIndex = 0;
             this.LabelBrand.Text = "SchoolarLink";
             // 
@@ -160,18 +160,18 @@
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelRight.Location = new System.Drawing.Point(240, 0);
             this.PanelRight.Name = "PanelRight";
-            this.PanelRight.Size = new System.Drawing.Size(710, 650);
+            this.PanelRight.Size = new System.Drawing.Size(708, 642);
             this.PanelRight.TabIndex = 1;
             // 
             // PanelBody
             // 
             this.PanelBody.AutoScroll = true;
-            this.PanelBody.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
+            this.PanelBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.PanelBody.Controls.Add(this.PanelApplyCard);
             this.PanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBody.Location = new System.Drawing.Point(0, 68);
             this.PanelBody.Name = "PanelBody";
-            this.PanelBody.Size = new System.Drawing.Size(710, 582);
+            this.PanelBody.Size = new System.Drawing.Size(708, 574);
             this.PanelBody.TabIndex = 1;
             // 
             // PanelApplyCard
@@ -207,7 +207,7 @@
             // 
             // ButtonSubmit
             // 
-            this.ButtonSubmit.BackColor = System.Drawing.Color.FromArgb(10, 54, 130);
+            this.ButtonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(54)))), ((int)(((byte)(130)))));
             this.ButtonSubmit.FlatAppearance.BorderSize = 0;
             this.ButtonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
@@ -223,10 +223,10 @@
             // ButtonBack
             // 
             this.ButtonBack.BackColor = System.Drawing.Color.White;
-            this.ButtonBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonBack.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonBack.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonBack.Location = new System.Drawing.Point(43, 692);
             this.ButtonBack.Name = "ButtonBack";
             this.ButtonBack.Size = new System.Drawing.Size(110, 40);
@@ -239,7 +239,7 @@
             // 
             this.LabelParentTaxReturnsFile.AutoEllipsis = true;
             this.LabelParentTaxReturnsFile.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelParentTaxReturnsFile.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelParentTaxReturnsFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelParentTaxReturnsFile.Location = new System.Drawing.Point(43, 638);
             this.LabelParentTaxReturnsFile.Name = "LabelParentTaxReturnsFile";
             this.LabelParentTaxReturnsFile.Size = new System.Drawing.Size(547, 18);
@@ -249,15 +249,15 @@
             // ButtonUploadParentTaxReturns
             // 
             this.ButtonUploadParentTaxReturns.BackColor = System.Drawing.Color.White;
-            this.ButtonUploadParentTaxReturns.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonUploadParentTaxReturns.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonUploadParentTaxReturns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUploadParentTaxReturns.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonUploadParentTaxReturns.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonUploadParentTaxReturns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonUploadParentTaxReturns.Location = new System.Drawing.Point(43, 598);
             this.ButtonUploadParentTaxReturns.Name = "ButtonUploadParentTaxReturns";
             this.ButtonUploadParentTaxReturns.Size = new System.Drawing.Size(547, 34);
             this.ButtonUploadParentTaxReturns.TabIndex = 18;
-            this.ButtonUploadParentTaxReturns.Text = "Upload Parent's Tax Returns";
+            this.ButtonUploadParentTaxReturns.Text = "Upload Parent\'s Tax Returns";
             this.ButtonUploadParentTaxReturns.UseVisualStyleBackColor = false;
             this.ButtonUploadParentTaxReturns.Click += new System.EventHandler(this.ButtonUploadParentTaxReturns_Click);
             // 
@@ -265,7 +265,7 @@
             // 
             this.LabelPreviousGradesFile.AutoEllipsis = true;
             this.LabelPreviousGradesFile.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelPreviousGradesFile.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelPreviousGradesFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelPreviousGradesFile.Location = new System.Drawing.Point(43, 558);
             this.LabelPreviousGradesFile.Name = "LabelPreviousGradesFile";
             this.LabelPreviousGradesFile.Size = new System.Drawing.Size(547, 18);
@@ -275,10 +275,10 @@
             // ButtonUploadPreviousGrades
             // 
             this.ButtonUploadPreviousGrades.BackColor = System.Drawing.Color.White;
-            this.ButtonUploadPreviousGrades.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonUploadPreviousGrades.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonUploadPreviousGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUploadPreviousGrades.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonUploadPreviousGrades.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonUploadPreviousGrades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonUploadPreviousGrades.Location = new System.Drawing.Point(43, 518);
             this.ButtonUploadPreviousGrades.Name = "ButtonUploadPreviousGrades";
             this.ButtonUploadPreviousGrades.Size = new System.Drawing.Size(547, 34);
@@ -291,7 +291,7 @@
             // 
             this.LabelGoodMoralFile.AutoEllipsis = true;
             this.LabelGoodMoralFile.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelGoodMoralFile.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelGoodMoralFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelGoodMoralFile.Location = new System.Drawing.Point(43, 478);
             this.LabelGoodMoralFile.Name = "LabelGoodMoralFile";
             this.LabelGoodMoralFile.Size = new System.Drawing.Size(547, 18);
@@ -301,10 +301,10 @@
             // ButtonUploadGoodMoral
             // 
             this.ButtonUploadGoodMoral.BackColor = System.Drawing.Color.White;
-            this.ButtonUploadGoodMoral.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonUploadGoodMoral.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonUploadGoodMoral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUploadGoodMoral.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonUploadGoodMoral.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonUploadGoodMoral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonUploadGoodMoral.Location = new System.Drawing.Point(43, 438);
             this.ButtonUploadGoodMoral.Name = "ButtonUploadGoodMoral";
             this.ButtonUploadGoodMoral.Size = new System.Drawing.Size(547, 34);
@@ -317,7 +317,7 @@
             // 
             this.LabelStudyLoadFile.AutoEllipsis = true;
             this.LabelStudyLoadFile.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelStudyLoadFile.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelStudyLoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelStudyLoadFile.Location = new System.Drawing.Point(43, 398);
             this.LabelStudyLoadFile.Name = "LabelStudyLoadFile";
             this.LabelStudyLoadFile.Size = new System.Drawing.Size(547, 18);
@@ -327,10 +327,10 @@
             // ButtonUploadStudyLoad
             // 
             this.ButtonUploadStudyLoad.BackColor = System.Drawing.Color.White;
-            this.ButtonUploadStudyLoad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonUploadStudyLoad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonUploadStudyLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUploadStudyLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonUploadStudyLoad.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonUploadStudyLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonUploadStudyLoad.Location = new System.Drawing.Point(43, 358);
             this.ButtonUploadStudyLoad.Name = "ButtonUploadStudyLoad";
             this.ButtonUploadStudyLoad.Size = new System.Drawing.Size(547, 34);
@@ -343,7 +343,7 @@
             // 
             this.LabelApplicationLetterFile.AutoEllipsis = true;
             this.LabelApplicationLetterFile.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.LabelApplicationLetterFile.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelApplicationLetterFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelApplicationLetterFile.Location = new System.Drawing.Point(43, 318);
             this.LabelApplicationLetterFile.Name = "LabelApplicationLetterFile";
             this.LabelApplicationLetterFile.Size = new System.Drawing.Size(547, 18);
@@ -353,10 +353,10 @@
             // ButtonUploadApplicationLetter
             // 
             this.ButtonUploadApplicationLetter.BackColor = System.Drawing.Color.White;
-            this.ButtonUploadApplicationLetter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.ButtonUploadApplicationLetter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.ButtonUploadApplicationLetter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUploadApplicationLetter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ButtonUploadApplicationLetter.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.ButtonUploadApplicationLetter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.ButtonUploadApplicationLetter.Location = new System.Drawing.Point(43, 278);
             this.ButtonUploadApplicationLetter.Name = "ButtonUploadApplicationLetter";
             this.ButtonUploadApplicationLetter.Size = new System.Drawing.Size(547, 34);
@@ -369,16 +369,16 @@
             // 
             this.LabelRequirementTitle.AutoSize = true;
             this.LabelRequirementTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.LabelRequirementTitle.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelRequirementTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelRequirementTitle.Location = new System.Drawing.Point(43, 248);
             this.LabelRequirementTitle.Name = "LabelRequirementTitle";
-            this.LabelRequirementTitle.Size = new System.Drawing.Size(190, 20);
+            this.LabelRequirementTitle.Size = new System.Drawing.Size(236, 25);
             this.LabelRequirementTitle.TabIndex = 9;
             this.LabelRequirementTitle.Text = "Upload your requirements";
             // 
             // PanelDeadline
             // 
-            this.PanelDeadline.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.PanelDeadline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelDeadline.Controls.Add(this.LabelDeadlineValue);
             this.PanelDeadline.Controls.Add(this.PanelDeadlineAccent);
             this.PanelDeadline.Location = new System.Drawing.Point(43, 198);
@@ -390,7 +390,7 @@
             // 
             this.LabelDeadlineValue.AutoEllipsis = true;
             this.LabelDeadlineValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.LabelDeadlineValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelDeadlineValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelDeadlineValue.Location = new System.Drawing.Point(14, 9);
             this.LabelDeadlineValue.Name = "LabelDeadlineValue";
             this.LabelDeadlineValue.Size = new System.Drawing.Size(519, 18);
@@ -399,7 +399,7 @@
             // 
             // PanelDeadlineAccent
             // 
-            this.PanelDeadlineAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.PanelDeadlineAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelDeadlineAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelDeadlineAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelDeadlineAccent.Name = "PanelDeadlineAccent";
@@ -410,16 +410,16 @@
             // 
             this.LabelDeadline.AutoSize = true;
             this.LabelDeadline.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.LabelDeadline.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelDeadline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelDeadline.Location = new System.Drawing.Point(43, 176);
             this.LabelDeadline.Name = "LabelDeadline";
-            this.LabelDeadline.Size = new System.Drawing.Size(62, 19);
+            this.LabelDeadline.Size = new System.Drawing.Size(77, 23);
             this.LabelDeadline.TabIndex = 7;
             this.LabelDeadline.Text = "Deadline";
             // 
             // PanelProvider
             // 
-            this.PanelProvider.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.PanelProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelProvider.Controls.Add(this.LabelProviderValue);
             this.PanelProvider.Controls.Add(this.PanelProviderAccent);
             this.PanelProvider.Location = new System.Drawing.Point(43, 136);
@@ -431,7 +431,7 @@
             // 
             this.LabelProviderValue.AutoEllipsis = true;
             this.LabelProviderValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.LabelProviderValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelProviderValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelProviderValue.Location = new System.Drawing.Point(14, 9);
             this.LabelProviderValue.Name = "LabelProviderValue";
             this.LabelProviderValue.Size = new System.Drawing.Size(519, 18);
@@ -440,7 +440,7 @@
             // 
             // PanelProviderAccent
             // 
-            this.PanelProviderAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.PanelProviderAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelProviderAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelProviderAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelProviderAccent.Name = "PanelProviderAccent";
@@ -451,16 +451,16 @@
             // 
             this.LabelProvider.AutoSize = true;
             this.LabelProvider.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.LabelProvider.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelProvider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelProvider.Location = new System.Drawing.Point(43, 114);
             this.LabelProvider.Name = "LabelProvider";
-            this.LabelProvider.Size = new System.Drawing.Size(59, 19);
+            this.LabelProvider.Size = new System.Drawing.Size(74, 23);
             this.LabelProvider.TabIndex = 5;
             this.LabelProvider.Text = "Provider";
             // 
             // PanelScholarshipName
             // 
-            this.PanelScholarshipName.BackColor = System.Drawing.Color.FromArgb(240, 242, 246);
+            this.PanelScholarshipName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.PanelScholarshipName.Controls.Add(this.LabelScholarshipNameValue);
             this.PanelScholarshipName.Controls.Add(this.PanelScholarshipNameAccent);
             this.PanelScholarshipName.Location = new System.Drawing.Point(43, 74);
@@ -472,7 +472,7 @@
             // 
             this.LabelScholarshipNameValue.AutoEllipsis = true;
             this.LabelScholarshipNameValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.LabelScholarshipNameValue.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelScholarshipNameValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelScholarshipNameValue.Location = new System.Drawing.Point(14, 9);
             this.LabelScholarshipNameValue.Name = "LabelScholarshipNameValue";
             this.LabelScholarshipNameValue.Size = new System.Drawing.Size(519, 18);
@@ -481,7 +481,7 @@
             // 
             // PanelScholarshipNameAccent
             // 
-            this.PanelScholarshipNameAccent.BackColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.PanelScholarshipNameAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.PanelScholarshipNameAccent.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelScholarshipNameAccent.Location = new System.Drawing.Point(0, 0);
             this.PanelScholarshipNameAccent.Name = "PanelScholarshipNameAccent";
@@ -492,17 +492,17 @@
             // 
             this.LabelScholarshipName.AutoSize = true;
             this.LabelScholarshipName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.LabelScholarshipName.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelScholarshipName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelScholarshipName.Location = new System.Drawing.Point(43, 52);
             this.LabelScholarshipName.Name = "LabelScholarshipName";
-            this.LabelScholarshipName.Size = new System.Drawing.Size(113, 19);
+            this.LabelScholarshipName.Size = new System.Drawing.Size(145, 23);
             this.LabelScholarshipName.TabIndex = 3;
             this.LabelScholarshipName.Text = "Scholarship name";
             // 
             // LabelSubtitle
             // 
             this.LabelSubtitle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.LabelSubtitle.ForeColor = System.Drawing.Color.FromArgb(112, 125, 150);
+            this.LabelSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(125)))), ((int)(((byte)(150)))));
             this.LabelSubtitle.Location = new System.Drawing.Point(42, 28);
             this.LabelSubtitle.Name = "LabelSubtitle";
             this.LabelSubtitle.Size = new System.Drawing.Size(548, 20);
@@ -513,10 +513,10 @@
             // 
             this.LabelTitle.AutoSize = true;
             this.LabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.LabelTitle.ForeColor = System.Drawing.Color.FromArgb(26, 36, 56);
+            this.LabelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(36)))), ((int)(((byte)(56)))));
             this.LabelTitle.Location = new System.Drawing.Point(38, -2);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(198, 45);
+            this.LabelTitle.Size = new System.Drawing.Size(271, 54);
             this.LabelTitle.TabIndex = 1;
             this.LabelTitle.Text = "Requirements";
             // 
@@ -524,23 +524,23 @@
             // 
             this.LabelPortal.AutoSize = true;
             this.LabelPortal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.LabelPortal.ForeColor = System.Drawing.Color.FromArgb(201, 158, 42);
+            this.LabelPortal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(158)))), ((int)(((byte)(42)))));
             this.LabelPortal.Location = new System.Drawing.Point(42, 10);
             this.LabelPortal.Name = "LabelPortal";
-            this.LabelPortal.Size = new System.Drawing.Size(161, 17);
+            this.LabelPortal.Size = new System.Drawing.Size(233, 23);
             this.LabelPortal.TabIndex = 0;
             this.LabelPortal.Text = "SCHOLARSHIP APPLICATION";
             // 
             // PanelHeader
             // 
-            this.PanelHeader.BackColor = System.Drawing.Color.FromArgb(11, 53, 124);
+            this.PanelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(53)))), ((int)(((byte)(124)))));
             this.PanelHeader.Controls.Add(this.LabelHeaderUser);
             this.PanelHeader.Controls.Add(this.LabelHeaderBell);
             this.PanelHeader.Controls.Add(this.LabelHeaderTitle);
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeader.Location = new System.Drawing.Point(0, 0);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Size = new System.Drawing.Size(710, 68);
+            this.PanelHeader.Size = new System.Drawing.Size(708, 68);
             this.PanelHeader.TabIndex = 0;
             // 
             // LabelHeaderUser
@@ -550,7 +550,7 @@
             this.LabelHeaderUser.ForeColor = System.Drawing.Color.White;
             this.LabelHeaderUser.Location = new System.Drawing.Point(658, 20);
             this.LabelHeaderUser.Name = "LabelHeaderUser";
-            this.LabelHeaderUser.Size = new System.Drawing.Size(31, 30);
+            this.LabelHeaderUser.Size = new System.Drawing.Size(40, 37);
             this.LabelHeaderUser.TabIndex = 2;
             this.LabelHeaderUser.Text = "◉";
             // 
@@ -561,7 +561,7 @@
             this.LabelHeaderBell.ForeColor = System.Drawing.Color.White;
             this.LabelHeaderBell.Location = new System.Drawing.Point(620, 20);
             this.LabelHeaderBell.Name = "LabelHeaderBell";
-            this.LabelHeaderBell.Size = new System.Drawing.Size(31, 30);
+            this.LabelHeaderBell.Size = new System.Drawing.Size(40, 37);
             this.LabelHeaderBell.TabIndex = 1;
             this.LabelHeaderBell.Text = "◌";
             // 
@@ -572,16 +572,15 @@
             this.LabelHeaderTitle.ForeColor = System.Drawing.Color.White;
             this.LabelHeaderTitle.Location = new System.Drawing.Point(25, 24);
             this.LabelHeaderTitle.Name = "LabelHeaderTitle";
-            this.LabelHeaderTitle.Size = new System.Drawing.Size(116, 21);
+            this.LabelHeaderTitle.Size = new System.Drawing.Size(137, 28);
             this.LabelHeaderTitle.TabIndex = 0;
             this.LabelHeaderTitle.Text = "Scholar Portal";
             // 
             // Apply
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(244, 246, 249);
-            this.ClientSize = new System.Drawing.Size(950, 650);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(948, 642);
             this.Controls.Add(this.PanelRight);
             this.Controls.Add(this.PanelSidebar);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -590,6 +589,7 @@
             this.MaximumSize = new System.Drawing.Size(966, 689);
             this.MinimumSize = new System.Drawing.Size(966, 689);
             this.Name = "Apply";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SchoolarLink - Apply";
             this.PanelSidebar.ResumeLayout(false);
@@ -604,6 +604,7 @@
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.ResumeLayout(false);
+
         }
     }
 }
