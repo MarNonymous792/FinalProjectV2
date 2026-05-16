@@ -88,6 +88,22 @@ namespace FinalProjectV2
             return null;
         }
 
+        public bool UpdateUserContacts(string studentId, string newEmail, string newContact)
+        {
+            using (MySqlConnection conn = DBConnection.GetConnection())
+            {
+                string sql = "UPDATE users SET email = @newEmail, contactNo = @newContact WHERE userid = @studentId";
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@newEmail", newEmail);
+                    cmd.Parameters.AddWithValue("@newContact", newContact);
+                    cmd.Parameters.AddWithValue("@studentId", studentId);
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
         public bool VerifyUserForPasswordReset(string studentId, string username, string email)
         {
             using (MySqlConnection conn = DBConnection.GetConnection())

@@ -55,21 +55,19 @@ namespace FinalProjectV2
 
             using (MySqlConnection conn = DBConnection.GetConnection())
             {
-                string sql = @"
-                    SELECT
-                        scholarshipId,
-                        name,
-                        provider,
-                        description,
-                        required_course,
-                        max_year_level,
-                        deadline,
-                        available_slots
-                    FROM scholarship
-                    ORDER BY deadline ASC, name ASC";
+                string sql = @"SELECT * FROM scholarship 
+                       WHERE (required_course = @userCourse OR required_course = 'Any')
+                       AND max_year_level >= @userYear
+                       AND scholarshipId NOT IN (
+                           SELECT scholarshipId FROM application WHERE userid = @uid
+                       )";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
+                    cmd.Parameters.AddWithValue("@userCourse", user.Course);
+                    cmd.Parameters.AddWithValue("@userYear", user.YearLevel);
+                    cmd.Parameters.AddWithValue("@uid", user.UserID);
+
                     conn.Open();
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
