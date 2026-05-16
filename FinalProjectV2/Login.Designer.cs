@@ -449,6 +449,7 @@
             this.MaximumSize = new System.Drawing.Size(966, 689);
             this.MinimumSize = new System.Drawing.Size(966, 689);
             this.Name = "Login";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SchoolarLink - Sign in";
             this.PanelSidebar.ResumeLayout(false);
