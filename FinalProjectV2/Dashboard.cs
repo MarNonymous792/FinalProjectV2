@@ -11,8 +11,6 @@ namespace FinalProjectV2
     {
         private readonly ScholarshipADO sado = new ScholarshipADO();
         private readonly ScholarApplicationADO saado = new ScholarApplicationADO();
-        private readonly Session sesh = new Session();
-
         private List<ScholarApplication> applications;
         private List<Scholarship> scholarships;
 
@@ -25,16 +23,40 @@ namespace FinalProjectV2
 
         public Dashboard(User user)
         {
-            sesh.CurrentUser = user;
-            scholarships = sado.GetSuitableScholarships(sesh.CurrentUser);
-            applications = saado.GetUserApplications(user);
+            Session.CurrentUser = user;
+            scholarships = sado.GetSuitableScholarships(Session.CurrentUser);
+            applications = saado.GetUserApplications(Session.CurrentUser);
             
             InitializeComponent();
             InitializeProfileLayout();
+
+            Session.OnDatabaseChanged += RefreshDashboardData;
+
             LoadScholarshipCards();
             LoadApplicationCards();
             LoadProfileData();
             ShowPage(PageSection.Scholarships);
+        }
+
+        private void RefreshDashboardData()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(RefreshDashboardData));
+                return;
+            }
+
+            scholarships = sado.GetSuitableScholarships(Session.CurrentUser);
+            applications = saado.GetUserApplications(Session.CurrentUser);
+
+            LoadScholarshipCards();
+            LoadApplicationCards();
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            Session.OnDatabaseChanged -= RefreshDashboardData;
+            base.OnFormClosed(e);
         }
 
         private void InitializeProfileLayout()
@@ -183,13 +205,13 @@ namespace FinalProjectV2
                     "Birthday",
                     "DateOfBirth"));
 
-            TextBoxProfileEmail.Text = string.IsNullOrWhiteSpace(sesh.CurrentUser.Email)
+            TextBoxProfileEmail.Text = string.IsNullOrWhiteSpace(Session.CurrentUser.Email)
                 ? "juan.delacruz@example.com"
-                : sesh.CurrentUser.Email;
+                : Session.CurrentUser.Email;
 
-            TextBoxProfileContact.Text = string.IsNullOrWhiteSpace(sesh.CurrentUser.ContactNo)
+            TextBoxProfileContact.Text = string.IsNullOrWhiteSpace(Session.CurrentUser.ContactNo)
                 ? "09123456789"
-                : sesh.CurrentUser.ContactNo;
+                : Session.CurrentUser.ContactNo;
         }
 
         private void SetLockedProfileFieldValue(string key, string value)
@@ -202,12 +224,12 @@ namespace FinalProjectV2
 
         private object GetUserPropertyValue(params string[] propertyNames)
         {
-            if (sesh.CurrentUser == null)
+            if (Session.CurrentUser == null)
             {
                 return null;
             }
 
-            Type userType = sesh.CurrentUser.GetType();
+            Type userType = Session.CurrentUser.GetType();
 
             foreach (string propertyName in propertyNames)
             {
@@ -217,7 +239,7 @@ namespace FinalProjectV2
 
                 if (property != null)
                 {
-                    return property.GetValue(sesh.CurrentUser);
+                    return property.GetValue(Session.CurrentUser);
                 }
             }
 
@@ -494,7 +516,7 @@ namespace FinalProjectV2
 
             using (ScholarshipPreview preview = new ScholarshipPreview())
             {
-                preview.SetScholarship(scholarship, sesh.CurrentUser, HandleSubmittedApplication);
+                preview.SetScholarship(scholarship, Session.CurrentUser, HandleSubmittedApplication);
 
                 if (preview.ShowDialog(this) == DialogResult.OK)
                 {
@@ -530,7 +552,7 @@ namespace FinalProjectV2
                 preview.SetApplicationPreview(
                     scholarship,
                     application,
-                    sesh.CurrentUser,
+                    Session.CurrentUser,
                     HandleAcceptedApplication);
 
                 preview.ShowDialog(this);
@@ -684,7 +706,7 @@ namespace FinalProjectV2
 
         private void ButtonNavDashboard_Click(object sender, EventArgs e)
         {
-            scholarships = sado.GetSuitableScholarships(sesh.CurrentUser);
+            scholarships = sado.GetSuitableScholarships(Session.CurrentUser);
             LoadScholarshipCards();
             ShowPage(PageSection.Scholarships);
         }
@@ -728,15 +750,15 @@ namespace FinalProjectV2
                 return;
             }
 
-            sesh.CurrentUser.Email = TextBoxProfileEmail.Text.Trim();
-            sesh.CurrentUser.ContactNo = TextBoxProfileContact.Text.Trim();
+            Session.CurrentUser.Email = TextBoxProfileEmail.Text.Trim();
+            Session.CurrentUser.ContactNo = TextBoxProfileContact.Text.Trim();
 
             UserADO uado = new UserADO();
 
             if(uado.UpdateUserContacts(
-                sesh.CurrentUser.UserID,
-                sesh.CurrentUser.Email,
-                sesh.CurrentUser.ContactNo))
+                Session.CurrentUser.UserID,
+                Session.CurrentUser.Email,
+                Session.CurrentUser.ContactNo))
             {
                 MessageBox.Show("Profile settings updated successfully.", "SchoolarLink", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadProfileData();

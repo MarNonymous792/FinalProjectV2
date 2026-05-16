@@ -454,6 +454,8 @@ namespace FinalProjectV2
             currentApplication.Status = "Accepted";
             acceptHandler?.Invoke(currentApplication);
 
+            Session.TriggerDatabaseChanged();
+
             MessageBox.Show(
                 "Application accepted successfully.",
                 "SchoolarLink",
@@ -495,6 +497,8 @@ namespace FinalProjectV2
 
             currentApplication.Status = "Cancelled";
             acceptHandler?.Invoke(currentApplication);
+
+            Session.TriggerDatabaseChanged();
 
             MessageBox.Show(
                 "Application cancelled successfully.",

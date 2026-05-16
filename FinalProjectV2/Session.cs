@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace FinalProjectV2
 {
-    public class Session
+    public static class Session
     {
-        public User CurrentUser { get; set; }
+        public static User CurrentUser { get; set; }
+
+        public static event Action OnDatabaseChanged;
+        public static void TriggerDatabaseChanged()
+        {
+            OnDatabaseChanged?.Invoke();
+        }
     }
 }
